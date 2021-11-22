@@ -37,15 +37,12 @@
                         </div>
                         <!-- Bottom Button-->
                         <div class="card-footer bg-dark slide slide2">
-                            <a class="btn mt-auto" href="#3">
-                                <i class="fa fa-thumbs-up icon-card-format">
-                            </i></a>
-                            <a class="btn mt-auto" href="#3">
-                                <i class="fa fa-thumbs-down icon-card-format">
-                            </i></a>
-                            <a class="btn mt-auto" href="#3">
-                                <i class="fa fa-list-ul icon-card-format">
-                            </i></a>
+                            <a class="btn mt-auto">
+                                <i class="fa fa-thumbs-up icon-card-format"></i></a>
+                            <a class="btn mt-auto">
+                                <i class="fa fa-thumbs-down icon-card-format"></i></a>
+                            <a class="btn mt-auto">
+                                <i class="fa fa-list-ul icon-card-format"></i></a>
                         </div>
                     </div>
                     <!-- Side Text on hover-->
