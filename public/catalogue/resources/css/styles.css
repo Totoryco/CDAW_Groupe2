@@ -11829,11 +11829,11 @@ body {
 }
 
 .slide4 {
-    position: static;
+    position: absolute;
     z-index: 3;
-    display: none;
+    visibility: hidden;
     width: 7.5rem;
-    height: 2.5rem;
+    height: 5rem;
     background: red;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -11842,7 +11842,7 @@ body {
 
 .slide4::before {
     content:"";
-    position: static;
+    position: absolute;
     width: 0;
     height: 0;
     border-top: 0.5rem solid transparent;
@@ -11865,6 +11865,7 @@ body {
 
 .btn:hover ~ .slide4{
     display: block;
+    visibility: visible;
 }
 
 .card .slide.slide2::after{

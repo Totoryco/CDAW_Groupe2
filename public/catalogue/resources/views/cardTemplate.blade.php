@@ -39,12 +39,16 @@
                         <div class="card-footer bg-dark slide slide2">
                             <a class="btn mt-auto">
                                 <i class="fa fa-thumbs-up icon-card-format"></i></a>
+                                <div class="slide slide4">
+                                    <p class="text text-white">Lorem Ipsum</p>
+                                </div>
                             <a class="btn mt-auto">
                                 <i class="fa fa-thumbs-down icon-card-format"></i></a>
                             <a class="btn mt-auto">
                                 <i class="fa fa-list-ul icon-card-format"></i></a>
                         </div>
                     </div>
+
                     <!-- Side Text on hover-->
                     <div class="slide slide3">
                         <p class="text text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>
