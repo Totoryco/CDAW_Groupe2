@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Project Anime - Search</title>
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation bar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">Project Anime Search</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" style="font-size: 24px;" aria-current="page" href="lobby.html"><i class="fa fa-home" style="color:#fd7e14;"></i></a></li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto mb-2 mb-lg-0 ms-lg-4">                            
+                        <li class="nav-item"><a class="nav-link" style="font-size: 18px;" href="mycollection.html">My collection</a></li>
+                        <li class="nav-item dropdown mr-auto">
+                            <a class="nav-link dropdown-toggle" style="font-size: 18px;" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-user" style="color:#fd7e14;"></i> Profile</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="profile.html">See my profile</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="login.html">Disconnect</a></li>
+                                <li><a class="dropdown-item" href="login.html">Change user</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+
+        <!--Séparation de la page -->
+        <header class="bg-white py-1">
+            <div class="container px-4 px-lg-5">
+                <div class="text-left">
+                    <h1 class="display-5 fw-bolder">Search section</h1> <!--Possibilité d'ajouter un texte de transition ou une image ?-->
+                </div>
+            </div>
+        </header>
+
+        
+
+
+        <!--Barre de recherche avancée -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">Research</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item dropdown mr-auto">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Type</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                                    <div id="list1" class="dropdown-check-list" tabindex="100">
+                                        <span class="anchor">Select type</span>
+                                        <ul class="items">
+                                          <li><input type="checkbox" />  &nbsp Movies </li>
+                                          <li><input type="checkbox" /> &nbsp Series</li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mr-auto">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Year</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                                    <div id="list1" class="dropdown-check-list" tabindex="100">
+                                        <span class="anchor">Select years</span>
+                                        <ul class="items">
+                                          <li><input type="checkbox" /> &nbsp 2021 </li>
+                                          <li><input type="checkbox" /> &nbsp 2020</li>
+                                          <li><input type="checkbox" /> &nbsp 2019 </li>
+                                          <li><input type="checkbox" /> &nbsp 2018 </li>
+                                          <li><input type="checkbox" /> &nbsp 2017 </li>
+                                          <li><input type="checkbox" /> &nbsp 2016 </li>
+                                          <li><input type="checkbox" /> &nbsp 2015</li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mr-auto">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Genre</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                                    <div id="list1" class="dropdown-check-list" tabindex="100">
+                                        <span class="anchor">Select genre</span>
+                                        <ul class="items">
+                                          <li><input type="checkbox" />  &nbsp Action </li>
+                                          <li><input type="checkbox" />  &nbsp Isekai</li>
+                                          <li><input type="checkbox" /> &nbsp Shojo </li>
+                                          <li><input type="checkbox" /> &nbsp Seinen </li>
+                                          <li><input type="checkbox" /> &nbsp Banana </li>
+                                          <li><input type="checkbox" /> &nbsp Shonen </li>
+                                          <li><input type="checkbox" /> &nbsp Sasagayo</li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mr-auto">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sort by</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                                    <div id="list1" class="dropdown-check-list" tabindex="100">
+                                        <span class="anchor">Sort by</span>
+                                        <ul class="items">
+                                          <li><input type="checkbox" /> &nbsp Latest </li>
+                                          <li><input type="checkbox" /> &nbsp Newest</li>
+                                          <li><input type="checkbox" /> &nbsp Popularity </li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mr-auto">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Must be</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                                    <div id="list1" class="dropdown-check-list" tabindex="100">
+                                        <span class="anchor">Must be</span>
+                                        <ul class="items">
+                                          <li><input type="checkbox" /> &nbsp Complete </li>
+                                          <li><input type="checkbox" /> &nbsp Ongoing</li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                            </ul>
+                        </li>
+                        <div class="search">
+                            <form action="search.html">
+                                <div class="input-group">
+                                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                                    <button class="btn btn-primary" id="btnNavbarSearch" type="button" href="lobby.html"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </ul>
+
+                    <ul class="navbar-nav mr-auto mb-2 mb-lg-0 ms-lg-4">
+                    <!--Rigth align section-->    
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-2 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-6 justify-content-center">
+                     <!-- Item 1-->
+                     <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://www.pngkey.com/png/full/346-3464743_kitsune-chan-render-by-nekoryocatsan-d5lfvvc-anime-girl.png" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://fond-ecran-manga.fr/wp-content/uploads/2020/04/Assassination-Classroom-Nagisa-Karma-Korosensei-Poster-by-450x600.png" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 5-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 6-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 7-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 8-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 9-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 10-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 11-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 12-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 19-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                   <!-- Item 20-->
+                   <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 21-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                   <!-- Item 22-->
+                   <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 23-->
+                    <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                   <!-- Item 24-->
+                   <div class="col mb-5">
+                        <div class="card h-100"> 
+                            <!-- Product image-->
+                            <a href="display.html"> 
+                            <img class="card-img-top" src="https://dummyimage.com/450x600/dee2e6/6c757d.jpg" alt="..." />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Name of the anime</h5>
+                                    <!-- Product price-->
+                                    Date - X episodes
+                                    X Likes
+                                </div>
+                            </div>
+                            <!-- Bottom Button-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">Like</a></div>
+                                            </div>
+                                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#3">AddToPlaylist</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Groupe 2 - Jalon 1 2021</p></div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
