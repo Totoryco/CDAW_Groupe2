@@ -11799,8 +11799,42 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
+.slide3 {
+    position: absolute;
+    z-index: 2;
+    margin-top: 50px;
+    margin-left: 16rem;
+    visibility: hidden;
+    width: 20rem;
+    height: 26rem;
+    background: var(--bs-dark);
+    position: absolute;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.slide3::before {
+    content:"";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 13rem solid transparent;
+    border-right: 40px solid var(--bs-dark);
+    border-bottom: 13rem solid transparent;
+    margin: 0 0 0 -40px;
+}
+
+.card-row{
+    display: flex;
+}
+
 .container .card:hover .slide.slide2{
     transform: translateY(0);
+}
+.container .card:hover + .slide3{
+    display: block;
+    visibility: visible;
 }
 
 .card .slide.slide2::after{
@@ -11877,3 +11911,4 @@ body {
 .signup-form form a:hover {
     text-decoration: underline;
 }
+
