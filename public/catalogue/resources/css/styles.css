@@ -11802,8 +11802,8 @@ body {
 .slide3 {
     position: absolute;
     z-index: 2;
-    margin-top: 50px;
-    margin-left: 16rem;
+    margin-top: 1rem;
+    margin-left: 14.5rem;
     visibility: hidden;
     width: 20rem;
     height: 26rem;
@@ -11814,15 +11814,19 @@ body {
     border-radius: 5px;
 }
 
+.slide3 .text{
+    padding: 20px;
+}
+
 .slide3::before {
     content:"";
     position: absolute;
     width: 0;
     height: 0;
-    border-top: 13rem solid transparent;
-    border-right: 40px solid var(--bs-dark);
-    border-bottom: 13rem solid transparent;
-    margin: 0 0 0 -40px;
+    border-top: 0.75rem solid transparent;
+    border-right: 0.5rem solid var(--bs-dark);
+    border-bottom: 0.75rem solid transparent;
+    margin: 12rem 0 0 -0.5rem;
 }
 
 .card-row{
