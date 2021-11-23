@@ -1,23 +1,28 @@
 <?php
 
-namespace App\Models;
+namespace App\Http\Controllers;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
-
-class Controller extends BaseController
+class HomeController extends Controller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-    
-    public function index(){
-        return view('helloWorld');
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
-    
-    public function getCategories(){
-        $categories = Category::all();
-        // $categories = Category::where('id',1);
-        return view('categories',$categories);
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
     }
 }
-
