@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "7d8d32368279e8c649233d389677679c",
-=======
-    "content-hash": "f51b847ef8d2dd08c7aeed18e1637cf4",
->>>>>>> 2081df4900966b4c1c089357f1812761301d054f
+    "content-hash": "2d4f27f78c0c67ebba6d2c4f469148b9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -67,7 +63,6 @@
             "time": "2021-03-11T06:42:03+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "bacon/bacon-qr-code",
             "version": "2.0.4",
             "source": {
@@ -119,7 +114,8 @@
                 "source": "https://github.com/Bacon/BaconQrCode/tree/2.0.4"
             },
             "time": "2021-06-18T13:26:35+00:00"
-=======
+        },
+        {
             "name": "barryvdh/laravel-debugbar",
             "version": "v3.6.4",
             "source": {
@@ -203,7 +199,6 @@
                 }
             ],
             "time": "2021-10-21T10:57:31+00:00"
->>>>>>> 2081df4900966b4c1c089357f1812761301d054f
         },
         {
             "name": "brick/math",
