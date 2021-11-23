@@ -15,12 +15,14 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
+        //By using the command "php artisan db:seed --class=CategorySeeder" in the terminal
         //Etape 1
+        /*
         DB::table('categories')->insert([
              'name' => Str::random(10)
             ]);
-
+        */
         //Etape 2
-        //\App\Models\Category::factory(10)->create();
+        \App\Models\Category::factory(10)->create();
     }
 }
