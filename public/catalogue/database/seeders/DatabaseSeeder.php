@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        //By using the command "php artisan db:seed" in the terminal
+        \App\Models\Category::factory(10)->create();
+        \App\Models\Genre::factory(10)->create();
     }
 }
