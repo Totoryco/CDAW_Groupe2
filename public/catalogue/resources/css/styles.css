@@ -3502,6 +3502,7 @@ textarea.form-control-lg {
 
 .btn-lg, .btn-group-lg > .btn {
   padding: 0.5rem 1rem;
+  text-align: center;
   font-size: 1.25rem;
   border-radius: 0.3rem;
 }
@@ -4601,9 +4602,6 @@ textarea.form-control-lg {
   background-color: var(--bs-dark);
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   justify-content: space-around;
-}
-.card-footer:last-child {
-  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
 }
 
 .card-header-tabs {
@@ -11832,27 +11830,29 @@ body {
     margin: 12rem 0 0 -0.5rem;
 }
 
-.slide4 {
+.card .slide4 {
     position: absolute;
     z-index: 3;
     visibility: hidden;
-    width: 7.5rem;
-    height: 5rem;
-    background: red;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+    display: inline-block;
+    margin-top: calc(27rem + 1px);
+    background: var(--bs-white);
+    border-color: var(--bs-primary);
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 3px;
 }
 
-.slide4::before {
-    content:"";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 0.5rem solid transparent;
-    border-right: 0.75rem solid red;
-    border-left: 0.75rem solid transparent;
-    margin: 0 0 0 0;
+.card .slide4::before {
+  content:"";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 0.75rem solid transparent;
+  border-top: 0.5rem solid var(--bs-primary);
+  border-right: 0.75rem solid transparent;
+  margin-left: calc(50% - 0.75rem);
+  margin-top: calc(2rem + 3px);
 }
 
 .card-row{
@@ -11863,11 +11863,6 @@ body {
     transform: translateY(0);
 }
 .container .card:hover + .slide3{
-    display: block;
-    visibility: visible;
-}
-
-.btn:hover ~ .slide4{
     display: block;
     visibility: visible;
 }
@@ -11948,4 +11943,17 @@ body {
 
 .icon-card-format:hover{
     color: var(--bs-orange);
+}
+
+.text-right{
+  text-align: right;
+}
+
+.btn-submit{
+  width: 100%;
+  color: var(--bs-white);
+}
+
+.btn-submit:hover{
+  background: var(--bs-secondary) !important;
 }

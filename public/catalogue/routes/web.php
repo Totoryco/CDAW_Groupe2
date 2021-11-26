@@ -35,7 +35,7 @@ Route::delete('/deleteFilm/{film}', 'App\Http\Controllers\ShowsFilmsController@d
 Auth::routes();
 Route::get('/home', function(){
     return view('home');
-})->middleware('auth');
+})->middleware('auth')->name('home');
 
 Route::post('/changeUser', 'App\Http\Controllers\ChangeUserController@changeUser')->middleware('auth')->name('changeUser');
 

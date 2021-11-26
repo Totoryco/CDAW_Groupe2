@@ -16,12 +16,83 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{asset('../../resources/css/styles.css')}}" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{asset('../resources/css/styles.css')}}" rel="stylesheet" />
+    <style>
+	body {
+		color: #fff;
+		background: #212529;
+		font-family: 'Roboto', sans-serif;
+	}
+    .form-control {
+        min-height: 41px;
+		box-shadow: none;
+		border-color: #e1e4e5;
+	}
+    .form-control:focus {
+		border-color: #212529;
+	}
+    .form-control, .btn {        
+        border-radius: 3px;
+    }    
+	.signup-form {
+		width: 400px;
+		margin: 0 auto;
+		padding: 30px 0;
+	}	
+    .signup-form form {
+		color: #9ba5a8; /*color for gray*/
+		border-radius: 3px;
+    	margin-bottom: 15px;
+        background: #fff;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+	.signup-form h2 {
+		color: #333;
+		font-weight: bold;
+        margin-top: 0;
+    }
+    .signup-form hr {
+        margin: 0 -30px 20px;
+    }
+	.signup-form .form-group {
+		margin-bottom: 20px;
+	}
+    .signup-form label {
+		font-weight: normal;
+		font-size: 13px;
+	}
+    .signup-form .btn {        
+        font-size: 16px;
+        font-weight: bold;
+		background: #fd7e14;
+		border: #fd7e14;
+		min-width: 140px;
+    }
+	.signup-form .btn:hover, .signup-form .btn:focus {
+		background: #0b5ed7;
+        outline: none !important;
+	}
+	.signup-form a {
+		color: #fff;
+		text-decoration: underline;
+	}
+    .signup-form a:hover {
+		text-decoration: none;
+	}
+	.signup-form form a {
+		color: #fd7e14;
+		text-decoration: none;
+	}	
+	.signup-form form a:hover {
+		text-decoration: underline;
+	}
+</style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}

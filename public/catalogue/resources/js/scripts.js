@@ -4,6 +4,13 @@
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
 */
 
+function DisplaySlide(id){
+    document.getElementById(id).style.visibility ="visible";
+}
+function DontDisplaySlide(id){
+    document.getElementById(id).style.visibility ="hidden";
+}
+
 /*
     Carousel
 */
@@ -38,3 +45,5 @@ checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
   else
     checkList.classList.add('visible');
 }
+
+

@@ -26,14 +26,22 @@
                 <!-- Bottom Button-->
                 <div class="card-footer bg-dark slide slide2">
                     <a class="btn mt-auto">
-                        <i class="fa fa-thumbs-up icon-card-format"></i></a>
-                        <div class="slide slide4">
-                            <p class="text text-white">Lorem Ipsum</p>
-                        </div>
+                    <i class="fa fa-thumbs-up icon-card-format" onmouseover="javascript:DisplaySlide('slide4_like');" onmouseleave="javascript:DontDisplaySlide('slide4_like');"></i></a>
+                        
                     <a class="btn mt-auto">
-                        <i class="fa fa-thumbs-down icon-card-format"></i></a>
-                    <a class="btn mt-auto">
-                        <i class="fa fa-list-ul icon-card-format"></i></a>
+                    <i class="fa fa-thumbs-down icon-card-format" onmouseover="javascript:DisplaySlide('slide4_dislike');" onmouseleave="javascript:DontDisplaySlide('slide4_dislike');"></i></a>
+
+                    <a class="btn mt-auto" >
+                    <i class="fa fa-list-ul icon-card-format" onmouseover="javascript:DisplaySlide('slide4_addToPlaylist');" onmouseleave="javascript:DontDisplaySlide('slide4_addToPlaylist');"></i></a>
+                </div>
+                <div class="slide4" id="slide4_like" style="margin-left: 1.6rem;">
+                    <p class="text text-black mx-3 my-1 fw-bold">I like this</p>
+                </div>
+                <div class="slide4" id="slide4_dislike" style="margin-left: 3.7rem;">
+                    <p class="text text-black mx-3 my-1 fw-bold">Not for me</p>
+                </div>
+                <div class="slide4" id="slide4_addToPlaylist" style="margin-left: 5.4rem;">
+                    <p class="text text-black mx-3 my-1 fw-bold">Add to playlist</p>
                 </div>
             </div>
 
@@ -41,6 +49,7 @@
             <div class="slide slide3">
                 <p class="text text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>
             </div>
+            <script src="{{asset('../resources/js/scripts.js')}}" defer></script>
         </div>
     </div>
 @stop
