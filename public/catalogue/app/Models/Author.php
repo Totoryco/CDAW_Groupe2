@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class genre extends Model
+class Author extends Model
 {
     use HasFactory;
 
-    protected $table = 'genres';
+    protected $table = 'authors';
     protected $guarded = ['id'];
     protected $hidden = [];
 
-    public function classification(){
-        return $this->belongsTo(Classification::class,'classification_id','id');
+    public function writing(){
+        return $this->belongsTo(Writing::class,'writing_id','id');
     }
 }

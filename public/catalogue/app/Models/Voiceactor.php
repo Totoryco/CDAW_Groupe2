@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class genre extends Model
+class VoiceActor extends Model
 {
     use HasFactory;
 
-    protected $table = 'genres';
+    protected $table = 'voiceactors';
     protected $guarded = ['id'];
     protected $hidden = [];
 
-    public function classification(){
-        return $this->belongsTo(Classification::class,'classification_id','id');
+    public function character(){
+        return $this->belongsTo(Character::class,'character_id','id');
     }
 }
