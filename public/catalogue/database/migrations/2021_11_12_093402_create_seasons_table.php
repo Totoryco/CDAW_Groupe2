@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFilmTable extends Migration
+class CreateSeasonsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateFilmTable extends Migration
      */
     public function up()
     {
-        Schema::create('films', function (Blueprint $table) {
+        Schema::create('seasons', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_genre')->constrained('genres');
-            //$table->foreignId('id_animation_studio')->constrained('studios');
-            //$table->foreignId('id_country')->constrained('countries');
+            $table->foreignId('anime_id')->constrained('animes');
             $table->string('name');
+            $table->tinyInteger('number');
+            $table->date('released_date');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateFilmTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('film');
+        Schema::dropIfExists('seasons');
     }
 }
