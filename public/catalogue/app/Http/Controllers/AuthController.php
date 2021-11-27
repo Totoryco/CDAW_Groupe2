@@ -11,7 +11,21 @@ class AuthController extends Controller
     {
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
+            return redirect()->intended($this->redirectPath());
         }
+    }
+
+    public function showProfile(){
+        return view('profile');
+    }
+
+    public function redirectPath()
+    {
+        // Logic that determines where to send the user
+        if (\Auth::user()->type == 'admin') {
+            return '/admin';
+        }
+
+        return '/dashboard';
     }
 }

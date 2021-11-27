@@ -13,9 +13,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    @yield('cards')
-                    @yield('cards')
-                    {{ __('You are logged in!') }}
                 </div>
             </div>
         </div>

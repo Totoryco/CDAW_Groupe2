@@ -17,6 +17,13 @@ use App\Models\Film;
 |
 */
 
+Route::get('/', function() {return view('cardTemplate');})->name('home');
+Route::get('/profile', 'App\Http\Controllers\AuthController@showProfile')->middleware('auth')->name('profile');
+
+//--------------------------------------------------------------------------
+// CRUD
+//--------------------------------------------------------------------------
+
 //Create
 Route::get('/addFilm', 'App\Http\Controllers\ShowsFilmsController@addFilmForm')->name('addFilmForm');
 Route::post('/addFilm', 'App\Http\Controllers\ShowsFilmsController@addFilm')->name('addFilm');
@@ -31,31 +38,12 @@ Route::put('/addFilm/{film}', 'App\Http\Controllers\ShowsFilmsController@updateF
 //Delete
 Route::delete('/deleteFilm/{film}', 'App\Http\Controllers\ShowsFilmsController@deleteFilm')->where('film', '[A-Za-z]+')->name('deleteFilm');
 
-//Auth
+//--------------------------------------------------------------------------
+// Auth
+//--------------------------------------------------------------------------
+
 Auth::routes();
-Route::get('/home', function(){
-    return view('home');
-})->middleware('auth')->name('home');
 
 Route::post('/changeUser', 'App\Http\Controllers\ChangeUserController@changeUser')->middleware('auth')->name('changeUser');
-
-Route::get('/{prenom}/{nom}', function($prenom, $nom){
-    echo $prenom;echo '3';
-    echo $nom;
-});
-
-Route::get('/{title}', function($title, $id) {
-    return $title;
-})->where(['title' => '[a-z]+']);
-
-Route::get('/', function() {
-    echo "Liste des films";
-})->name('listeFilms');
-
-Route::get('/', function() {
-    // echo "Hello world!";
-    // return view('welcome');
-    return view('cardTemplate');
-});
 
 ?>

@@ -43,40 +43,36 @@
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" style="font-size: 20px;margin-left: 1rem;" href="{{ route('login') }}">Login</a>
-                                </li>
+                                <li class="nav-item"><a class="nav-link" style="font-size: 20px;margin-left: 1rem;" href="{{ route('login') }}">Login</a></li>
                             @endif
 
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" style="font-size: 20px;" href="{{ route('register') }}">Register</a>
-                                </li>
+                                <li class="nav-item"><a class="nav-link" style="font-size: 20px;" href="{{ route('register') }}">Register</a></li>
                             @endif
                         @else
-                        <li class="nav-item"><a class="nav-link" style="font-size: 20px;margin-left: 1rem;" href="lobby.html">My collection</a></li>
-                            <li class="nav-item dropdown mr-auto">
-                                <a class="nav-link dropdown-toggle" style="font-size: 20px;" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-user nav-icons"></i> {{ Auth::user()->name }}</a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="profile.html">See my profile</a></li>
-                                    <li><hr class="dropdown-divider" /></li>
-                                    <li><a class="dropdown-item" href="{{ route('logout') }}" 
-                                        onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                        Disconnect</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('changeUser') }}" 
-                                        onclick="event.preventDefault();
-                                                document.getElementById('changeUser-form').submit();">
-                                    Change user</a></li>
-                                </ul>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                                <form id="changeUser-form" action="{{ route('changeUser') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
+                            <li class="nav-item"><a class="nav-link" style="font-size: 20px;margin-left: 1rem;" href="{{ route('home') }}">My collection</a></li>
+                                <li class="nav-item dropdown mr-auto">
+                                    <a class="nav-link dropdown-toggle" style="font-size: 20px;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-user nav-icons"></i> {{ Auth::user()->name }}</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="{{ route('profile') }}">See my profile</a></li>
+                                        <li><hr class="dropdown-divider" /></li>
+                                        <li><a class="dropdown-item" href="{{ route('logout') }}" 
+                                            onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                            Disconnect</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('changeUser') }}" 
+                                            onclick="event.preventDefault();
+                                                    document.getElementById('changeUser-form').submit();">
+                                        Change user</a></li>
+                                    </ul>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                    <form id="changeUser-form" action="{{ route('changeUser') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
                             </li>
-                        </li>
                         @endguest
                     </ul>
                 </div>
@@ -87,6 +83,7 @@
         <div class="container" style="display: flex;">
             @yield('cards')
             @yield('cards')
+            @yield('profile')
         </div>
 
         <!-- Footer-->
