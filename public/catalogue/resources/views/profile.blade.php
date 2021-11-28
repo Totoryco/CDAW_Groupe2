@@ -11,12 +11,11 @@
                                 <input type="file" id="file">
                                 <label for="file" id="uploadBtn">Choose Photo</label>
                             </div>
-                            <!-- <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/200x200/ced4da/6c757d.jpg" alt="..." /></div> -->
 
                             <div class="sb-sidenav-menu-heading" style="margin-top: 200px;">My Profile</div>
                             <a class="nav-link" href="profile.html">
                                 <div class="sb-nav-link-icon"><i class="fa fa-user-circle"></i></div>
-                                Name
+                                {{ Auth::user()->name }}
                             </a>
                             <a class="nav-link" href="profile.html">
                                 <div class="sb-nav-link-icon"><i class="fa fa-globe"></i></div>
@@ -24,11 +23,11 @@
                             </a>
                             <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fa fa-envelope"></i></div>
-                                Email
+                                {{ Auth::user()->email }}
                             </a>
                             <div class="sb-sidenav-menu-heading">Activities</div>
                             <a class="nav-link" href="#">
-                                <div class="sb-nav-link-icon"><i class="fa fa-book-open"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
                                 Followed animes
                             </a>
                             <a class="nav-link" href="#">
