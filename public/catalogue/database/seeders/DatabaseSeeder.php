@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
             }
         }
         
-        // POur chaque saison, 5 episodes
+        // Pour chaque saison, 5 episodes
         for ($j = 1; $j <= 32; $j++) {
             for ($k = 1; $k <= 5; $k++) {
                 \App\Models\Episode::factory(1)->create([
