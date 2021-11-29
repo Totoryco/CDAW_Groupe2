@@ -15,12 +15,12 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('pseudo')->default('defaultpseudo');
-            $table->string('firstname')->default('defaultfirstname');
-            $table->string('lastname')->default('defaultlastname');
-            $table->string('location')->default('defaultlocation');
+            $table->string('pseudo')->unique();
+            $table->string('firstname')->nullable();
+            $table->string('lastname')->nullable();
+            $table->string('location')->nullable();
             $table->string('email')->unique();
-            $table->string('status')->default('defaultstatus');
+            $table->string('status')->default('guest');
             //$table->binary('avatar'); Le blob/binary c'est nul avec les seeders
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

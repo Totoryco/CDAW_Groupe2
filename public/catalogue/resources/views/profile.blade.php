@@ -15,11 +15,11 @@
                             <div class="sb-sidenav-menu-heading" style="margin-top: 200px;">My Profile</div>
                             <a class="nav-link" href="profile.html">
                                 <div class="sb-nav-link-icon"><i class="fa fa-user-circle"></i></div>
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->pseudo }}
                             </a>
                             <a class="nav-link" href="profile.html">
                                 <div class="sb-nav-link-icon"><i class="fa fa-globe"></i></div>
-                                Location
+                                {{ (Auth::user()->location) != NULL ? Auth::user()->location : 'Location' }}
                             </a>
                             <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fa fa-envelope"></i></div>
@@ -108,7 +108,7 @@
                                 History DataTable Example
                             </div>
                             <div class="card-body">
-                                <table id="example" class="table table-striped" style="width:100%">
+                                <table id="datatablesSimple" class="table table-striped" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
@@ -606,11 +606,18 @@
                 </footer>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="js/datatables-simple-demo.js"></script>
+        <!-- <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js" crossorigin="anonymous"></script> -->
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.js"></script>
+        <script src="{{asset('../resources/js/datatables-simple-demo.js')}}"></script><!--"js/datatables-simple-demo.js"></script>-->
+@endsection
+
+@section('profilejs')
+    <script src="{{asset('../resources/js/profile.js')}}" defer></script>
 @endsection

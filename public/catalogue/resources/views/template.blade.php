@@ -8,10 +8,16 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+        
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{asset('../resources/css/styles.css')}}" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.3/datatables.css"/>
+
         <script src="{{asset('../resources/js/scripts.js')}}" defer></script>
+        @yield('profilejs')
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
         <!-- Styles -->
         <style>
@@ -52,7 +58,7 @@
                         @else
                             <li class="nav-item"><a class="nav-link" style="font-size: 20px;margin-left: 1rem;" href="{{ route('home') }}">My collection</a></li>
                                 <li class="nav-item dropdown mr-auto">
-                                    <a class="nav-link dropdown-toggle" style="font-size: 20px;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-user nav-icons"></i> {{ Auth::user()->name }}</a>
+                                    <a class="nav-link dropdown-toggle" style="font-size: 20px;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-user nav-icons"></i> {{ Auth::user()->pseudo }}</a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="{{ route('profile') }}">See my profile</a></li>
                                         <li><hr class="dropdown-divider" /></li>
@@ -91,8 +97,5 @@
 
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Groupe 2 - Jalon 2 2021</p></div>
         </footer>
-
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
