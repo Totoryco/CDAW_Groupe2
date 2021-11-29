@@ -45,5 +45,6 @@ Route::delete('/deleteFilm/{film}', 'App\Http\Controllers\ShowsFilmsController@d
 Auth::routes();
 
 Route::post('/changeUser', 'App\Http\Controllers\ChangeUserController@changeUser')->middleware('auth')->name('changeUser');
+Route::put('/updateprofile', 'Laravel\Fortify\Contracts\UpdatesUserProfileInformation\UpdateUserProfileInformation@update')->middleware('auth')->name('updateprofile');
 
 ?>

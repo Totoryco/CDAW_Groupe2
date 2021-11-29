@@ -19,6 +19,10 @@ class AuthController extends Controller
         return view('profile');
     }
 
+    public function updateProfile(){
+        return view('updateprofile');
+    }
+
     public function redirectPath()
     {
         // Logic that determines where to send the user
