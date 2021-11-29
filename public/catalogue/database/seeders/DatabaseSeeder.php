@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
+use Illuminate\Support\Facades\DB;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -81,10 +83,13 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        // 3 lectures de medias par user
-        // 3 playlists avec 5 anime dedans
-        // 3 commentaires par user
-    }
+        // Pour les tests de bdd
+
+        DB::table('genres')->insert([
+            'name' => "TestGenre",
+            'description' => "This is the test genre example"
+           ]);
 
        
+}
 }

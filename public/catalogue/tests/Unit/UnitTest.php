@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use Illuminate\Support\Str;
 
 
-class ExampleTest extends TestCase
+class UnitTest extends TestCase
 {
     /**
      * A basic test example.
@@ -15,12 +15,12 @@ class ExampleTest extends TestCase
      */
 
     //A partir d'ici, ce sont des tests
-    /*
+    
     public function test_example()
     {
         $this->assertTrue(true);
     }
-    */
+    
 
     public function testBasicTest()
     {
