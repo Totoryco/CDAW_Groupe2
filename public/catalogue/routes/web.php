@@ -6,6 +6,7 @@ use App\Http\Controllers\ShowsFilmsController;
 use App\Http\Controllers\ChangeUserController;
 use App\Http\Controllers\UploadAvatarController;
 use App\Models\Film;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,5 +56,7 @@ Route::delete('/deleteFilm/{film}', 'App\Http\Controllers\ShowsFilmsController@d
 Auth::routes();
 
 Route::post('/changeUser', 'App\Http\Controllers\ChangeUserController@changeUser')->middleware('auth')->name('changeUser');
+Route::get('/updateprofile', 'App\Actions\Fortify\UpdateUserProfileInformation@updateForm')->middleware('auth')->name('updateprofileForm');
+Route::put('/updateprofile',  'App\Actions\Fortify\UpdateUserProfileInformation@update')->middleware('auth')->name('updateprofile');
 
 ?>

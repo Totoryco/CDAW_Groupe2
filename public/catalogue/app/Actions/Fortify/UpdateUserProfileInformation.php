@@ -2,10 +2,11 @@
 
 namespace App\Actions\Fortify;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
@@ -19,26 +20,29 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     public function update($user, array $input)
     {
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
-
+            'firstname' => ['nullable', 'string', 'max:255'],
+            'lastname' => ['nullable', 'string', 'max:255'],
             'email' => [
                 'required',
                 'string',
                 'email',
                 'max:255',
-                Rule::unique('users')->ignore($user->id),
+                Rule::unique(User::class)->ignore($user->id)
             ],
-        ])->validateWithBag('updateProfileInformation');
+            //'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'pseudo' => ['required', 'string', 'max:255'],
+            'location' => ['nullable', 'string', 'max:255'],
+        ])->validate();
 
-        if ($input['email'] !== $user->email &&
-            $user instanceof MustVerifyEmail) {
+        $hasher = app('hash');
+
+        if (($user->id == Auth::user()->id)) {
             $this->updateVerifiedUser($user, $input);
-        } else {
-            $user->forceFill([
-                'name' => $input['name'],
-                'email' => $input['email'],
-            ])->save();
         }
+    }
+
+    public function updateForm(){
+        return view('updateprofile');
     }
 
     /**
@@ -51,11 +55,11 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     protected function updateVerifiedUser($user, array $input)
     {
         $user->forceFill([
-            'name' => $input['name'],
-            'email' => $input['email'],
+            'pseudo' => $input['pseudo'],
+            'firstname' => $input['firstname'],
+            'lastname' => $input['lastname'],
+            'location' => $input['location'],
             'email_verified_at' => null,
         ])->save();
-
-        $user->sendEmailVerificationNotification();
     }
 }
