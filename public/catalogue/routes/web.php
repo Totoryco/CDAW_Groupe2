@@ -51,6 +51,6 @@ Auth::routes();
 
 Route::post('/changeUser', 'App\Http\Controllers\ChangeUserController@changeUser')->middleware('auth')->name('changeUser');
 Route::get('/updateprofile', 'App\Actions\Fortify\UpdateUserProfileInformation@updateForm')->middleware('auth')->name('updateprofileForm');
-Route::put('/updateprofile', 'App\Actions\Fortify\UpdateUserProfileInformation@update')->middleware('auth')->name('updateprofile');
+Route::put('/updateprofile',  'App\Actions\Fortify\UpdateUserProfileInformation@update')->middleware('auth')->name('updateprofile');
 
 ?>

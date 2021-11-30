@@ -29,18 +29,16 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'max:255',
                 Rule::unique(User::class)->ignore($user->id)
             ],
-            // 'password' => ['required', 'string', 'min:8', 'confirmed'],
+            //'password' => ['required', 'string', 'min:8', 'confirmed'],
             'pseudo' => ['required', 'string', 'max:255'],
             'location' => ['nullable', 'string', 'max:255'],
         ])->validate();
 
-        echo($user->id);
-        if (($user->id == Auth::user()->id) ) {
-            echo($user->id);
+        $hasher = app('hash');
+
+        if (($user->id == Auth::user()->id)) {
             $this->updateVerifiedUser($user, $input);
-            echo($user->id);
-       }
-        //return view('profile');
+        }
     }
 
     public function updateForm(){
@@ -63,7 +61,5 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'location' => $input['location'],
             'email_verified_at' => null,
         ])->save();
-
-        $user->sendEmailVerificationNotification();
     }
 }
