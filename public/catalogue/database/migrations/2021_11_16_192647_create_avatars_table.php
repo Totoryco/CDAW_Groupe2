@@ -14,7 +14,7 @@ class CreateAvatarsTable extends Migration
     function up() {
         Schema::create('avatars', function(Blueprint $table) {
            $table -> id();
-           //$table->foreignId('user_id')->constrained('users');
+           $table->foreignId('user_id')->constrained('users');
            $table -> string('name')->nullable();
            $table -> string('path')->nullable();
            $table -> timestamps();

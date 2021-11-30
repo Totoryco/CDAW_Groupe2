@@ -8,9 +8,15 @@
                         <div class="nav">
                             <div class="profile-pic-div">
                                 <!--Changer ici pour avoir la profile pict et celle par def (avatar image img)-->
-                                <img src="{{asset('../public/images/1638265193_mi.jpg')}}" id="photo">
-                                <input type="file" id="file">
+                                <a href="{{ route('avatarForm') }}" title="Choose photo">
+                                    <img src="{{asset('../public/images/image.jpg')}}" id="photo">
+                                    <label for="file" id="uploadBtn">Choose Photo</label>
+                                </a>
+                                <!--
+                                <img src="{{asset('../public/images/image.jpg')}}" id="photo">
                                 <label for="file" id="uploadBtn">Choose Photo</label>
+                               <input type="file" id="file">
+                                <a href="{{ route('avatarForm') }}" id="file" class="btn btn-xs btn-info pull-right">Edit</a>-->
                             </div>
 
                             <div class="sb-sidenav-menu-heading" style="margin-top: 200px;">My Profile</div>

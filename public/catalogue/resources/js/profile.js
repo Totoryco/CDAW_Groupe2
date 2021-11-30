@@ -20,7 +20,7 @@ imgDiv.addEventListener('mouseleave', function(){
 //lets work for image showing functionality when we choose an image to upload
 
 //when we choose a foto to upload
-
+/*
 file.addEventListener('change', function(){
     //this refers to file
     const choosedFile = this.files[0];
@@ -35,4 +35,4 @@ file.addEventListener('change', function(){
 
         reader.readAsDataURL(choosedFile);
     }
-});
+});*/

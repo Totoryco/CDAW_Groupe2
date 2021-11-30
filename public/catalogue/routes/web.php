@@ -25,7 +25,7 @@ Route::get('/test', function () {
 
 
 //Route::get('upload-image', [UploadAvatarController::class, 'index']);
-
+Route::get('/uploadAvatar','App\Http\Controllers\UploadAvatarController@avatarForm')->name('avatarForm');
 Route::post('/uploadAvatar','App\Http\Controllers\UploadAvatarController@avatarUpload')->name('uploadAvatar');
 
 Route::get('/', function() {return view('cardTemplate');})->name('home');
