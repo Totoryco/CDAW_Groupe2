@@ -7,7 +7,8 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="profile-pic-div">
-                                <img src="{{asset('../resources/assets/image.jpg')}}" id="photo">
+                                <!--Changer ici pour avoir la profile pict et celle par def (avatar image img)-->
+                                <img src="{{asset('../public/images/1638265193_mi.jpg')}}" id="photo">
                                 <input type="file" id="file">
                                 <label for="file" id="uploadBtn">Choose Photo</label>
                             </div>
