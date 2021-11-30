@@ -9,7 +9,7 @@
             <p>It's free and only takes a minute.</p>
             <hr>
             <div class="form-group">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="E-mail address (Login)*" required autocomplete="email" autofocus>
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="E-mail address (Login)*" required autocomplete="email" autofocus>
                 
                 @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -18,7 +18,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <input id="pseudo" type="text" class="form-control @error('pseudo') is-invalid @enderror" name="pseudo" value="{{ old('pseudo') }}" placeholder="Username*" required autocomplete="pseudo">
+                <input id="pseudo" type="text" class="form-control @error('pseudo') is-invalid @enderror" name="pseudo" placeholder="Username*" required autocomplete="pseudo">
                 @error('pseudo')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -26,7 +26,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" placeholder="First Name" autocomplete="firstname">
+                <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" placeholder="First Name" autocomplete="firstname">
                 @error('firstname')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -34,7 +34,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" placeholder="Last Name" autocomplete="lastname">
+                <input id="lastname" type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" placeholder="Last Name" autocomplete="lastname">
                 @error('lastname')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

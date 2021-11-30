@@ -11993,3 +11993,8 @@ body {
   cursor: pointer;
   display: none;
 }
+
+.form-control:read-only{
+  background-color: var(--bs-gray-500);
+  border-color: var(--bs-secondary);
+} 
