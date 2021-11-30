@@ -2,10 +2,11 @@
 
 namespace App\Actions\Fortify;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
@@ -26,22 +27,23 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'string',
                 'email',
                 'max:255',
-                Rule::unique(User::class),
+                Rule::unique(User::class)->ignore($user->id)
             ],
-            'password' => $this->passwordRules(),
+            // 'password' => ['required', 'string', 'min:8', 'confirmed'],
             'pseudo' => ['required', 'string', 'max:255'],
             'location' => ['nullable', 'string', 'max:255'],
-        ])->validateWithBag('updateProfileInformation');
+        ])->validate();
 
-        if ($input['email'] !== $user->email &&
-            $user instanceof MustVerifyEmail) {
+        echo($user->id);
+        if (($user->id == Auth::user()->id) ) {
+            echo($user->id);
             $this->updateVerifiedUser($user, $input);
-        } else {
-            $user->forceFill([
-                'username' => $input['username'],
-                'email' => $input['email'],
-            ])->save();
-        }
+            echo($user->id);
+       }
+        //return view('profile');
+    }
+
+    public function updateForm(){
         return view('updateprofile');
     }
 
@@ -55,8 +57,10 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     protected function updateVerifiedUser($user, array $input)
     {
         $user->forceFill([
-            'username' => $input['username'],
-            'email' => $input['email'],
+            'pseudo' => $input['pseudo'],
+            'firstname' => $input['firstname'],
+            'lastname' => $input['lastname'],
+            'location' => $input['location'],
             'email_verified_at' => null,
         ])->save();
 

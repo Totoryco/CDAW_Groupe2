@@ -13,15 +13,15 @@
                             </div>
 
                             <div class="sb-sidenav-menu-heading" style="margin-top: 200px;">My Profile</div>
-                            <a class="nav-link" href="{{ route('logout') }}">
+                            <a class="nav-link" href="{{ route('updateprofileForm') }}">
                                 <div class="sb-nav-link-icon"><i class="fa fa-user-circle"></i></div>
                                 {{ Auth::user()->pseudo }}
                             </a>
-                            <a class="nav-link" href="{{ route('logout') }}">
+                            <a class="nav-link" href="{{ route('updateprofileForm') }}">
                                 <div class="sb-nav-link-icon"><i class="fa fa-globe"></i></div>
                                 {{ (Auth::user()->location) != NULL ? Auth::user()->location : 'Location' }}
                             </a>
-                            <a class="nav-link" href="{{ route('logout') }}">
+                            <a class="nav-link" href="{{ route('updateprofileForm') }}">
                                 <div class="sb-nav-link-icon"><i class="fa fa-envelope"></i></div>
                                 {{ Auth::user()->email }}
                             </a>
