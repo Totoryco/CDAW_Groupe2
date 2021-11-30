@@ -22,11 +22,8 @@ Route::get('/test', function () {
     return view('test');
 });
 
-
-
-//Route::get('upload-image', [UploadAvatarController::class, 'index']);
-Route::get('/uploadAvatar','App\Http\Controllers\UploadAvatarController@avatarForm')->name('avatarForm');
-Route::post('/uploadAvatar','App\Http\Controllers\UploadAvatarController@avatarUpload')->name('uploadAvatar');
+Route::get('/uploadAvatar','App\Http\Controllers\UploadAvatarController@avatarForm')->middleware('auth')->name('avatarForm');
+Route::post('/uploadAvatar','App\Http\Controllers\UploadAvatarController@avatarUpload')->middleware('auth')->name('uploadAvatar');
 
 Route::get('/', function() {return view('cardTemplate');})->name('home');
 Route::get('/profile', 'App\Http\Controllers\AuthController@showProfile')->middleware('auth')->name('profile');

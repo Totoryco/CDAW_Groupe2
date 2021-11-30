@@ -9,7 +9,10 @@
                             <div class="profile-pic-div">
                                 <!--Changer ici pour avoir la profile pict et celle par def (avatar image img)-->
                                 <a href="{{ route('avatarForm') }}" title="Choose photo">
-                                    <img src="{{asset('../public/images/image.jpg')}}" id="photo">
+                                    @php
+                                    $avatar = Auth::user()->avatar
+                                    @endphp
+                                    <img src="{{asset('../public/images/').'/'.$avatar}}" style="max-width:100%;">                       
                                     <label for="file" id="uploadBtn">Choose Photo</label>
                                 </a>
                                 <!--
