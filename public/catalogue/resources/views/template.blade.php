@@ -86,10 +86,16 @@
         </nav>
 
         <!-- Content-->
-        <div class="container" style="display: flex;">
-            @yield('cards')
-            @yield('cards')
-            @yield('profile')
+        <div class="grille">
+            <div class="grille-display">
+                @yield('cards')
+                @yield('cards')
+                @yield('cards')
+                @yield('cards')
+                @yield('cards')
+                @yield('cards')
+                @yield('profile')
+            </div>
         </div>
 
         <!-- Footer-->

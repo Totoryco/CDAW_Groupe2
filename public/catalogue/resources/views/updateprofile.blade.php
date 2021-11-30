@@ -10,7 +10,7 @@
             <p>Feel free to update your data.</p>
             <hr>
             <div class="form-group">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ Auth::user()->email }}" placeholder="E-mail address (Login)" required autocomplete="email" autofocus readonly="true">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ Auth::user()->email }}" placeholder="E-mail address (Login)" required autocomplete="email" readonly="true">
                 
                 @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -19,7 +19,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <input id="pseudo" type="text" class="form-control @error('pseudo') is-invalid @enderror" name="pseudo" value="{{ Auth::user()->pseudo }}" placeholder="Username">
+                <input id="pseudo" type="text" class="form-control @error('pseudo') is-invalid @enderror" name="pseudo" value="{{ Auth::user()->pseudo }}" placeholder="Username" autofocus>
                 @error('pseudo')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
