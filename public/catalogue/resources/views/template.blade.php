@@ -88,12 +88,9 @@
         <!-- Content-->
         <div class="grille">
             <div class="grille-display">
-                @yield('cards')
-                @yield('cards')
-                @yield('cards')
-                @yield('cards')
-                @yield('cards')
-                @yield('cards')
+            @for ($i = 0; $i <= 7; $i++)
+                    @yield('cards')
+                @endfor
                 @yield('profile')
             </div>
         </div>
