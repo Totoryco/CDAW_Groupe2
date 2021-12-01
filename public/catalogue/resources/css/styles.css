@@ -11766,7 +11766,7 @@ body {
 
 .card-format{
   width: 15rem;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .icon-card-format{
@@ -11780,7 +11780,6 @@ body {
 
 .card .slide.slide1 {
     align-content: center;
-    z-index: 1;
     transition: .7s;
     transform: translateY(50px);
     background: #fff;
@@ -11792,13 +11791,13 @@ body {
 
 .card .slide.slide2 {
     position: relative;
+    visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     transition: .8s;
     transform: translateY(-100px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .slide3 {
@@ -11832,10 +11831,8 @@ body {
 
 .slide4 {
     position: absolute;
-    z-index: 3;
     visibility: hidden;
     display: inline-block;
-    margin-top: calc(27rem + 1px);
     background: var(--bs-white);
     border-color: var(--bs-primary);
     border-width: 3px;
@@ -11846,8 +11843,6 @@ body {
 .slide4::before {
   content:"";
   position: absolute;
-  width: 0;
-  height: 0;
   border-left: 0.75rem solid transparent;
   border-top: 0.5rem solid var(--bs-primary);
   border-right: 0.75rem solid transparent;
@@ -11861,6 +11856,7 @@ body {
 
 .card:hover .slide.slide2{
     transform: translateY(0);
+    visibility: visible;
 }
 .card:hover + .slide3{
     display: block;
@@ -11945,6 +11941,11 @@ body {
     color: var(--bs-orange);
 }
 
+.icon-card-format:hover + .slide4{
+  visibility: visible;
+}
+
+
 .text-right{
   text-align: right;
 }
@@ -12007,6 +12008,7 @@ body {
 
 .grille-display {
   display: flex;
+  margin-left: 1rem;
   flex-wrap: wrap;
   gap: 1rem;
 }
