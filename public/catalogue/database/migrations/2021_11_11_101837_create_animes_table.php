@@ -19,6 +19,7 @@ class CreateAnimesTable extends Migration
             $table->foreignId('animationstudio_id')->constrained('animationstudios');
             $table->foreignId('country_id')->constrained('countries');
             $table->string('name');
+            $table->text('description');
             $table->timestamps();
         });
     }

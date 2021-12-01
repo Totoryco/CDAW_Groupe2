@@ -5,6 +5,7 @@ use App\Http\Controllers\listeMediasController;
 use App\Http\Controllers\ShowsFilmsController;
 use App\Http\Controllers\ChangeUserController;
 use App\Http\Controllers\UploadAvatarController;
+use App\Http\Controllers\HomeController;
 use App\Models\Film;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +26,7 @@ Route::get('/test', function () {
 Route::get('/uploadAvatar','App\Http\Controllers\UploadAvatarController@avatarForm')->middleware('auth')->name('avatarForm');
 Route::post('/uploadAvatar','App\Http\Controllers\UploadAvatarController@avatarUpload')->middleware('auth')->name('uploadAvatar');
 
-Route::get('/', function() {return view('cardTemplate');})->name('home');
+Route::get('/', 'App\Http\Controllers\HomeController@home')->name('home');
 Route::get('/profile', 'App\Http\Controllers\AuthController@showProfile')->middleware('auth')->name('profile');
 
 //--------------------------------------------------------------------------

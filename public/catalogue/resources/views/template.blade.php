@@ -86,14 +86,9 @@
         </nav>
 
         <!-- Content-->
-        <div class="grille">
-            <div class="grille-display">
-            @for ($i = 0; $i <= 7; $i++)
-                    @yield('cards')
-                @endfor
-                @yield('profile')
-            </div>
-        </div>
+        @yield('cards')
+        @yield('profile')
+
 
         <!-- Footer-->
         <footer class="py-5 bg-dark" style="justify-content: flex-end;">

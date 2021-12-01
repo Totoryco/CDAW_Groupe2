@@ -2,15 +2,15 @@
 - BARGE Antony
 - HERSEMEULE Bruce
 
-## Jalon 1
+## Jalon 3
 
 # Description
 Dans ce jalon, nous avons pu mettre en place les principes d'authentification ainsi que des tests.
 
 
 # Pour tester et valider notre travail :
-   - Il recommandé de reprendre notre projet de 0, c'est à dire de recommencer la migration et le seeding (php artisan migrate; php artisan db:seed)
-   - Afin d'observer nos tests et leurs résultats, utiliser la commande 
+   - Il est recommandé de reprendre notre projet de 0, c'est à dire de recommencer la migration et le seeding (php artisan migrate; php artisan db:seed)
+   - Afin d'observer nos tests et leurs résultats, utiliser la commande php artisan test
    - Avant de commencer, il faudra préparer une image de profil (si possible carré), si ce n'est pas déjà le cas nous proposons d'utiliser la magnifique image de Picsou disponible dans le dossier jalon 3.
 
 La suite constitue un parcours type permettant de faire le tour des fonctionnalités implémentées, en observant les pages avant/après chaque instruction :
