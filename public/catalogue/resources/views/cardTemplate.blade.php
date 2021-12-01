@@ -26,26 +26,23 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Bottom Button-->
-                        <div class="card-footer bg-dark slide slide2">
-                            <a class="btn mt-auto">
-                            <i class="fa fa-thumbs-up icon-card-format" onmouseover="javascript:DisplaySlide('slide4_like');" onmouseleave="javascript:DontDisplaySlide('slide4_like');"></i></a>
-                                
-                            <a class="btn mt-auto">
-                            <i class="fa fa-thumbs-down icon-card-format" onmouseover="javascript:DisplaySlide('slide4_dislike');" onmouseleave="javascript:DontDisplaySlide('slide4_dislike');"></i></a>
-
-                            <a class="btn mt-auto" >
-                            <i class="fa fa-list-ul icon-card-format" onmouseover="javascript:DisplaySlide('slide4_addToPlaylist');" onmouseleave="javascript:DontDisplaySlide('slide4_addToPlaylist');"></i></a>
-                        </div>
-                        <div class="slide4" id="slide4_like" style="margin-left: 1.6rem;">
+                    <!-- Bottom Button-->
+                    <div class="card-footer bg-dark slide slide2">
+                        <a class="btn mt-auto" >
+                        <i class="fa fa-thumbs-up icon-card-format"></i>
+                        <span class="slide4" style="bottom: 100%; left: 50%; margin-left: -60px;">
                             <p class="text text-black mx-3 my-1 fw-bold">I like this</p>
-                        </div>
-                        <div class="slide4" id="slide4_dislike" style="margin-left: 3.7rem;">
+                        </span></a>
+                        <a class="btn mt-auto">
+                        <i class="fa fa-thumbs-down icon-card-format"></i>
+                        <span class="slide4" style="padding: -5px 0;">
                             <p class="text text-black mx-3 my-1 fw-bold">Not for me</p>
-                        </div>
-                        <div class="slide4" id="slide4_addToPlaylist" style="margin-left: 5.4rem;">
+                        </span></a>
+                        <a class="btn mt-auto" >
+                        <i class="fa fa-list-ul icon-card-format"></i>
+                        <span class="slide4" style="padding: -5px 0;">
                             <p class="text text-black mx-3 my-1 fw-bold">Add to playlist</p>
-                        </div>
+                        </span></a>
                     </div>
 
                     <!-- Side Text on hover-->
@@ -59,7 +56,7 @@
                         </p>
                     </div>
                     <script src="{{asset('../resources/js/scripts.js')}}" defer></script>
-                </div>
+                </div>                
             </div>
             @endforeach
         </div>
