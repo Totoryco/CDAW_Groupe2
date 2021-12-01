@@ -86,17 +86,9 @@
         </nav>
 
         <!-- Content-->
-        <div class="grille">
-            <div class="grille-display">
-                @yield('cards')
-                @yield('cards')
-                @yield('cards')
-                @yield('cards')
-                @yield('cards')
-                @yield('cards')
-                @yield('profile')
-            </div>
-        </div>
+        @yield('cards')
+        @yield('profile')
+
 
         <!-- Footer-->
         <footer class="py-5 bg-dark" style="justify-content: flex-end;">
