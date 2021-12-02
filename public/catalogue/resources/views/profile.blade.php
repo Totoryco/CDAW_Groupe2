@@ -57,18 +57,18 @@
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Favorite</div>
+                                    <div class="card-body">Liked</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="profile.html">View Details</a>
+                                        <a class="small text-white stretched-link" href="{{ route('profile2') }}">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Not finished</div>
+                                    <div class="card-body">Disliked</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="profile.html">View Details</a>
+                                        <a class="small text-white stretched-link" href="{{ route('profile3') }}">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -77,16 +77,16 @@
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">Seen</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="profile.html">View Details</a>
+                                        <a class="small text-white stretched-link" href="{{ route('profile') }}">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Deleted from playlist</div>
+                                    <div class="card-body">From my playlists</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="profile.html">View Details</a>
+                                        <a class="small text-white stretched-link" href="{{ route('profile4') }}">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -127,7 +127,7 @@
                                             <th>Last seen</th>
                                             <th>Season</th>
                                             <th>Episode</th>
-                                            <th>Likes</th>
+                                            <th>My opinion</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -138,7 +138,7 @@
                                             <th>Last seen</th>
                                             <th>Season</th>
                                             <th>Episode</th>
-                                            <th>Likes</th>
+                                            <th>My opinion</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -156,7 +156,17 @@
                                             </td>
                                             <td>{{$anime->seasonnumber}}</td>
                                             <td>{{$anime->episodenumber}}</td>
-                                            <td>{{$anime->likes}}</td>
+                                            <td>
+                                            @if(($anime->likes)==1)
+                                                Liked
+                                            @else
+                                                @if(($anime->likes)==-1)
+                                                    Disliked
+                                                @else
+                                                    None
+                                                @endif
+                                            @endif
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
