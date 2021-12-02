@@ -17,7 +17,11 @@ class AuthController extends Controller
     }
 
     public function showProfile(){
-        return view('profile');
+        //$lastview = 'select seasons.number as seasonnumber, episodes.number as episodenumber, max(consultation_date) as date from viewings join episodes on episodes.id=viewings.episodes_id join seasons on seasons.id=episodes.season_id where users.id= ' . Auth::user()->id .' group by seasons.anime_id order by date desc';
+        // lastview.episodenumber as lastepisode, lastview.seasonnumber as lastseason, lastview.date as date, join ('. $lastview .') lastview on episodes.id=lastview.episodes_id
+        $order = 'date'; //date, c'est mieux pour l'historique
+        $data = DB::select('select animes.name, max(countries.name) as country, max(animationstudios.name) as animestudio, sum(viewings.like) as likes, max(seasons.number) as seasonnumber, max(episodes.number) as episodenumber, max(viewings.updated_at) as date from animes join countries on animes.country_id=countries.id join animationstudios on animes.animationstudio_id=animationstudios.id join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join viewings on viewings.episode_id=episodes.id where viewings.user_id=' . Auth::user()->id . ' group by episodes.id order by ' . $order . ' desc');
+        return view('profile', compact('data'));
     }
 
     public function updateProfile(){

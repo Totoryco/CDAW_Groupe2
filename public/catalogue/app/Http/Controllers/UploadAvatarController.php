@@ -26,12 +26,12 @@ class UploadAvatarController extends Controller {
                 $user_id = Auth::user()->id;
                 DB::table('users')->where('id', $user_id)->update(['avatar' => $fileName]);
                 $user->avatar = $fileName;
-                return view('profile');
+                return redirect(route('profile'));
             }
             else {                          
                 Session::flash('msg','Please Check the data');
                 Session::flash('type','fail');
-                return redirect('test');
+                return redirect(route('test'));
                  }
     }
 

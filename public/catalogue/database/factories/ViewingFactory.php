@@ -16,6 +16,7 @@ class ViewingFactory extends Factory
     {
         return [
             'episode_id' => rand(1, 9),
+            'like' => rand(0, 1),
         ];
     }
 

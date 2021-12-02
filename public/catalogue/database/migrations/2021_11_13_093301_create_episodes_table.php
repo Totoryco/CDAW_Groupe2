@@ -19,7 +19,6 @@ class CreateEpisodesTable extends Migration
             $table->tinyInteger('number');
             $table->smallInteger('duration'); //En minutes ?
             $table->date('released_date');
-            $table->integer('likes');
             $table->timestamps();
         });
     }
