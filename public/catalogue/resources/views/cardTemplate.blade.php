@@ -44,20 +44,21 @@
                             <p class="text text-black mx-3 my-1 fw-bold">Add to playlist</p>
                         </span></a>
                     </div>
-
+                    </div>
                     <!-- Side Text on hover-->
                     <div class="slide slide3">
                         <p class="text text-white">
-                        @if(isset($variable))
-                            {{ $anime->description}}
-                        @else
-                            This anime doesn't have a description in our data
-                        @endif
+                            @if(isset($variable))
+                                {{ $anime->description}}
+                            @else
+                                {{"This anime doesn't have a description in our data"}}
+                            @endif
                         </p>
                     </div>
                     <script src="{{asset('../resources/js/scripts.js')}}" defer></script>
                 </div>                
             </div>
+            
             @endforeach
         </div>
     </div>
