@@ -28,6 +28,9 @@ Route::post('/uploadAvatar','App\Http\Controllers\UploadAvatarController@avatarU
 
 Route::get('/', 'App\Http\Controllers\HomeController@home')->name('home');
 Route::get('/profile', 'App\Http\Controllers\AuthController@showProfile')->middleware('auth')->name('profile');
+Route::get('/profile2', 'App\Http\Controllers\AuthController@showProfile2')->middleware('auth')->name('profile2');
+Route::get('/profile3', 'App\Http\Controllers\AuthController@showProfile3')->middleware('auth')->name('profile3');
+Route::get('/profile4', 'App\Http\Controllers\AuthController@showProfile4')->middleware('auth')->name('profile4');
 
 //--------------------------------------------------------------------------
 // CRUD

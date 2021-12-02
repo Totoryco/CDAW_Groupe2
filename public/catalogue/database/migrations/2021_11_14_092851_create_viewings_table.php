@@ -17,6 +17,7 @@ class CreateViewingsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('episode_id')->constrained('episodes');
+            $table->integer('like');
             $table->timestamps();
         });
     }

@@ -17,7 +17,6 @@ class EpisodeFactory extends Factory
         return [
             'released_date' => $this->faker->date(),
             'duration' => rand(20, 45),
-            'likes' => rand(20, 1800),
         ];
     }
 
