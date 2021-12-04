@@ -12007,7 +12007,7 @@ body {
 }
 
 .grille-display {
-  display: flex;
+  display: flex !important;
   margin-left: 1rem;
   flex-wrap: wrap;
   gap: 1rem;
