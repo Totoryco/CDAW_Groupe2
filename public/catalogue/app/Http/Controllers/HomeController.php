@@ -28,7 +28,7 @@ class HomeController extends Controller
     public function home()
     {
         $order = 'date';
-        $data = DB::select('select animes.name, SUM(viewings.like) as likes, COUNT(distinct seasons.id) as number, max(episodes.released_date) as date from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join viewings on viewings.episode_id=episodes.id group by animes.name order by ' . $order . ' desc');
+        $data = DB::select('select animes.name, SUM(viewings.like) as likes, COUNT(distinct seasons.id) as number, max(episodes.released_date) as date, max(animes.image) as image, max(animes.description) as description from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join viewings on viewings.episode_id=episodes.id group by animes.name order by ' . $order . ' desc');
         return view('cardTemplate', compact('data'));
     }
 }

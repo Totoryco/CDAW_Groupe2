@@ -17,7 +17,6 @@ class AnimeFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'description' => $this->faker->unique()->text,
-            'genre_id' => rand(1, 9),
             'animationStudio_id' => rand(1, 9),
             'country_id' => rand(1, 9),
         ];

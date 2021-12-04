@@ -15,8 +15,8 @@ class ViewingFactory extends Factory
     public function definition()
     {
         return [
-            'episode_id' => rand(1, 9),
-            'like' => rand(0, 1),
+            'user_id' => rand(1, 9),
+            'like' => rand(-1, 1),
         ];
     }
 

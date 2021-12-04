@@ -18,7 +18,7 @@ class CreateSeasonsTable extends Migration
             $table->foreignId('anime_id')->constrained('animes');
             $table->string('name');
             $table->tinyInteger('number');
-            $table->date('released_date');
+            $table->string('released_date');
             $table->timestamps();
         });
     }

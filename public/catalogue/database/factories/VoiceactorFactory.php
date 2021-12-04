@@ -15,9 +15,9 @@ class VoiceactorFactory extends Factory
     public function definition()
     {
         return [
-            'firstname' => $this->faker->name(),
+            'firstname' => "Dummy",
             'lastname' => $this->faker->name(),
-            'country_id' => rand(1, 9),
+            'country_id' => 1,
         ];
     }
 

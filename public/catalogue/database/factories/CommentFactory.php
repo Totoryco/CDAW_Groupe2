@@ -15,7 +15,7 @@ class CommentFactory extends Factory
     public function definition()
     {
         return [
-            'episode_id' => rand(1, 9),
+            'user_id' => rand(1, 9),
             'publication_date' => $this->faker->date(),
             'likes' => rand(2, 30),
             'description' => $this->faker->unique()->text,

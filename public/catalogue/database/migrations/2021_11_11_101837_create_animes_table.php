@@ -15,10 +15,10 @@ class CreateAnimesTable extends Migration
     {
         Schema::create('animes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('genre_id')->constrained('genres');
             $table->foreignId('animationstudio_id')->constrained('animationstudios');
             $table->foreignId('country_id')->constrained('countries');
             $table->string('name');
+            $table->string('image')->default('https://fond-ecran-manga.fr/wp-content/uploads/2020/04/Assassination-Classroom-Nagisa-Karma-Korosensei-Poster-by-450x600.png');
             $table->text('description');
             $table->timestamps();
         });

@@ -5,7 +5,6 @@
     <div class="grille">
         <div class="grille-display">
             @foreach ($data as $anime)
-
             <!-- Item -->
             <div class="col mb-5">
                 <div class="card-row">
@@ -13,7 +12,7 @@
                         <div class="container slide slide1">
                             <!-- Product image-->
                         <a href="display.html">
-                            <img class="card-img-top" src="https://fond-ecran-manga.fr/wp-content/uploads/2020/04/Assassination-Classroom-Nagisa-Karma-Korosensei-Poster-by-450x600.png" alt="..." />
+                            <img class="card-img-top" src="{{ $anime->image }}" alt="..." />
                             </a>
                             <div class="card-body">
                                 <div class="text-center">
@@ -22,7 +21,7 @@
                                     <!-- Product description-->
                                     <h6>{{$anime->date}}</h6>
                                     <h6>{{$anime->number}} seasons</h6> 
-                                    <h6>{{ $anime->likes }} Likes</h6>
+                                    <h6>{{$anime->likes}} Likes</h6>
                                 </div>
                             </div>
                         </div>
@@ -48,8 +47,8 @@
                     <!-- Side Text on hover-->
                     <div class="slide slide3">
                         <p class="text text-white">
-                        @if(isset($variable))
-                            {{ $anime->description}}
+                        @if(isset($anime->description))
+                            {{$anime->description}}
                         @else
                             This anime doesn't have a description in our data
                         @endif

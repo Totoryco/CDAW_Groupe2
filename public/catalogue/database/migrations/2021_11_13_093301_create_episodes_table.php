@@ -17,7 +17,8 @@ class CreateEpisodesTable extends Migration
             $table->id();
             $table->foreignId('season_id')->constrained('seasons');
             $table->tinyInteger('number');
-            $table->smallInteger('duration'); //En minutes ?
+            $table->string('duration'); //Par rapport à la requête d'anime
+            $table->string('name');
             $table->date('released_date');
             $table->timestamps();
         });
