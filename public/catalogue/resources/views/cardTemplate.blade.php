@@ -44,13 +44,13 @@
                         <!-- Bottom Button-->
                         <div class="card-footer bg-dark slide slide2">
                             @if(!is_null(Auth::user()))
-                            <a class="btn mt-auto" >
+                            <a class="btn mt-auto" href="{{ action('App\Http\Controllers\ActionsController@liked') }}" >
                             <i class="fa fa-thumbs-up icon-card-format"></i>
                             
                             <span class="slide4" style="bottom: 100%; left: 50%; margin-left: -60px;">
-                                <p class="text text-black mx-3 my-1 fw-bold">I like this</p>
+                                <p class="text text-black mx-3 my-1 fw-bold" >I like this</p>
                             </span></a>
-                            <a class="btn mt-auto">
+                            <a class="btn mt-auto" href="{{ action('App\Http\Controllers\ActionsController@disliked') }}">
                             <i class="fa fa-thumbs-down icon-card-format"></i>
                             <span class="slide4" style="padding: -5px 0;">
                                 <p class="text text-black mx-3 my-1 fw-bold">Not for me</p>
@@ -58,7 +58,7 @@
                             <div class="dropdown mr-auto">
                                 <a class="btn mt-auto" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-list-ul icon-card-format"></i>
                                 <span class="slide4" style="padding: -5px 0;">
-                                    <p class="text text-black mx-3 my-1 fw-bold">Add to playlist</p>
+                                    <p class="text text-black mx-3 my-1 fw-bold" >Add to playlist</p>
                                 </span></a>
                                 <ul class="dropdown-menu" style="width: 15rem;">
                                     @foreach($myplaylists as $playlist)

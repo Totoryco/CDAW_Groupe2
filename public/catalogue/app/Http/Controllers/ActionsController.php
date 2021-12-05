@@ -13,6 +13,20 @@ use App\Models\Adding;
 
 class ActionsController extends Controller
 {
+    public function liked()
+    {
+                
+        
+        return \App::call('App\Http\Controllers\HomeController@home');
+    }
+
+    public function disliked()
+    {
+                
+        
+        return \App::call('App\Http\Controllers\HomeController@home');
+    }
+    
     public function newplaylist(Request $request)
     {
         $playlistname = $request->input('playlist');
