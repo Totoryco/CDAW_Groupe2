@@ -23,27 +23,46 @@
                             </div>
 
                             <div class="sb-sidenav-menu-heading" style="margin-top: 200px;">My Profile</div>
-                            <a class="nav-link" href="{{ route('updateprofileForm') }}">
-                                <div class="sb-nav-link-icon"><i class="fa fa-user-circle"></i></div>
-                                {{ Auth::user()->pseudo }}
-                            </a>
-                            <a class="nav-link" href="{{ route('updateprofileForm') }}">
-                                <div class="sb-nav-link-icon"><i class="fa fa-globe"></i></div>
-                                {{ (Auth::user()->location) != NULL ? Auth::user()->location : 'Location' }}
-                            </a>
-                            <a class="nav-link" href="{{ route('updateprofileForm') }}">
-                                <div class="sb-nav-link-icon"><i class="fa fa-envelope"></i></div>
-                                {{ Auth::user()->email }}
-                            </a>
+                                <a class="nav-link" href="{{ route('updateprofileForm') }}">
+                                    <div class="sb-nav-link-icon"><i class="fa fa-user-circle"></i></div>
+                                    {{ Auth::user()->pseudo }}
+                                </a>
+                                <a class="nav-link" href="{{ route('updateprofileForm') }}">
+                                    <div class="sb-nav-link-icon"><i class="fa fa-globe"></i></div>
+                                    {{ (Auth::user()->location) != NULL ? Auth::user()->location : 'Location' }}
+                                </a>
+                                <a class="nav-link" href="{{ route('updateprofileForm') }}">
+                                    <div class="sb-nav-link-icon"><i class="fa fa-envelope"></i></div>
+                                    {{ Auth::user()->email }}
+                                </a>
                             <div class="sb-sidenav-menu-heading">Activities</div>
-                            <a class="nav-link" href="#">
-                                <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
-                                Followed animes
-                            </a>
-                            <a class="nav-link" href="#">
-                                <div class="sb-nav-link-icon"><i class="fa fa-address-book"></i></div>
-                                Friends
-                            </a>
+                                <a class="nav-link" href="#">
+                                    <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
+                                    Followed animes
+                                </a>
+                                <a class="nav-link" href="#">
+                                    <div class="sb-nav-link-icon"><i class="fa fa-address-book"></i></div>
+                                    Friends
+                                </a>
+
+                            @if(Auth::user()->isModo())
+                            <div class="sb-sidenav-menu-heading">Moderation</div>
+                                <a class="nav-link" href="#">
+                                    <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
+                                    Comments
+                                </a>
+
+                            @elseif(Auth::user()->isAdmin())
+                            <div class="sb-sidenav-menu-heading">Moderation</div>
+                                <a class="nav-link" href="#">
+                                    <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
+                                    Comments
+                                </a>
+                                <a class="nav-link" href="#">
+                                    <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
+                                    Users
+                                </a>
+                            @endif
                     </div>
                 </nav>
             </div>
