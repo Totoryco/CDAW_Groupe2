@@ -31,7 +31,11 @@
                             </div>
                         </div>
                         <!-- Preview image figure-->
-                        <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x700/ced4da/6c757d.jpg" alt="..." /></figure>
+                        <div class="mb-4" style="width: 100%; height: 0px; position: relative; padding-bottom: 56.250%;">
+                            <iframe src="https://streamable.com/e/shil2" frameborder="0" width="100%" height="100%" allowfullscreen style="width: 100%; height: 100%; position: absolute;">
+                            </iframe>
+                            </div>
+
                         <!-- Post categories-->
                         <a class="badge bg-secondary text-decoration-none link-light" href="#!">Some anime spec</a>
                         <a class="badge bg-secondary text-decoration-none link-light" href="#!">Other anime spec</a>
@@ -56,8 +60,8 @@
                                     <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
                                     @foreach ($comments as $comment)
                                     <!-- Single comment-->
-                                    <div class="d-flex">
-                                        <img class="rounded-circle" src="{{asset('../public/images/').'/'.$comment->avatar}}" alt="..." />
+                                    <div class="d-flex mb-4">
+                                        <img class="rounded-circle" style="max-width: 50px; max-height: 50px;" src="{{asset('../public/images/').'/'.$comment->avatar}}" alt="..." />
                                         <div class="ms-3 text-white">
                                             <div class="fw-bold text-primary">
                                                 {{$comment->pseudo}}
@@ -82,7 +86,7 @@
                                             </div>
                                             <div class="col">
                                                 <div class="text-white">
-                                                    Episode number {{$other->number}}
+                                                    Episode {{$other->number}}
                                                 </div>
                                             </div>
                                         </div>

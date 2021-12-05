@@ -16,7 +16,7 @@
     @endif
 
     <div class="grille">
-        <div class="grille-display">
+        <div class="grille-display mx-grid">
             @foreach ($data as $anime)
             <!-- Item -->
             <div class="col mb-5">

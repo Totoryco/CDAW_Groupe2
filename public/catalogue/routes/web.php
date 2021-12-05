@@ -36,6 +36,9 @@ Route::get('/profile', 'App\Http\Controllers\AuthController@showProfile')->middl
 Route::get('/profile2', 'App\Http\Controllers\AuthController@showProfile2')->middleware('auth')->name('profile2');
 Route::get('/profile3', 'App\Http\Controllers\AuthController@showProfile3')->middleware('auth')->name('profile3');
 Route::get('/profile4', 'App\Http\Controllers\AuthController@showProfile4')->middleware('auth')->name('profile4');
+Route::get('/profileModo', 'App\Http\Controllers\AuthController@showProfileModo')->middleware('auth')->name('profileModo');
+Route::get('/profileAdmin', 'App\Http\Controllers\AuthController@showProfileAdmin')->middleware('auth')->name('profileAdmin');
+
 
 Route::get('/newplaylist', 'App\Http\Controllers\ActionsController@newplaylist')->middleware('auth')->name('newplaylist');
 Route::get('/adding/{playlistname}/{animeid}', 'App\Http\Controllers\ActionsController@adding')->middleware('auth')->name('adding');
