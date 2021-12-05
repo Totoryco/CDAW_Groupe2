@@ -44,6 +44,19 @@ class AuthController extends Controller
         return view('profile', compact('data'));
     }
 
+    public function showProfileModo(){
+        $order = 'date'; 
+        $data = DB::select('select animes.name, max(countries.name) as country, max(animationstudios.name) as animestudio, sum(viewings.like) as likes, max(seasons.number) as seasonnumber, max(episodes.number) as episodenumber, max(viewings.updated_at) as date from animes join countries on animes.country_id=countries.id join animationstudios on animes.animationstudio_id=animationstudios.id join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join viewings on viewings.episode_id=episodes.id where (viewings.like = 1 AND viewings.user_id=' . Auth::user()->id . ') group by episodes.id order by ' . $order . ' desc');
+        return view('profileModo', compact('data'));
+    }
+
+    public function showProfileAdmin(){
+        //Historique by my playlists (for now, like = 0)
+        $order = 'date'; 
+        $data = DB::select('select animes.name, max(countries.name) as country, max(animationstudios.name) as animestudio, sum(viewings.like) as likes, max(seasons.number) as seasonnumber, max(episodes.number) as episodenumber, max(viewings.updated_at) as date from animes join countries on animes.country_id=countries.id join animationstudios on animes.animationstudio_id=animationstudios.id join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join viewings on viewings.episode_id=episodes.id where (viewings.like = 1 AND viewings.user_id=' . Auth::user()->id . ') group by episodes.id order by ' . $order . ' desc');
+        return view('profileAdmin', compact('data'));
+    }
+
     public function updateProfile(){
         return view('updateprofile');
     }

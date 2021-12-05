@@ -7285,6 +7285,11 @@ textarea.form-control-lg {
   margin-left: 3rem !important;
 }
 
+.mx-grid {
+  margin-right: 10% !important;
+  margin-left: 10% !important;
+}
+
 .mx-auto {
   margin-right: auto !important;
   margin-left: auto !important;
@@ -7742,7 +7747,7 @@ textarea.form-control-lg {
 /* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: var(--bs-primary);
 }
 
 .text-secondary {
