@@ -59,14 +59,17 @@
                                 <p class="text text-black mx-3 my-1 fw-bold">Add to playlist</p>
                             </span></a>
                             <ul class="dropdown-menu" style="width: 15rem;">
-                                <li><a class="dropdown-item" href="#">Playlist example</a></li>
-
+                                @foreach($myplaylists as $playlist)
+                                @php
+                                    $array = [$playlist->name, $anime->id];
+                                @endphp
+                                                    <li><a class="dropdown-item" href="{{action('App\Http\Controllers\ActionsController@adding',['playlistname'=> $playlist->name,'animeid'=>$anime->id] )}}">&nbsp {{$playlist->name}}</a></li>
+                                @endforeach
                                 <li><hr class="dropdown-divider" /></li>
-
                                 <li><div class="search dropdown-item" style="margin: auto;">
-                                    <form action="{{ action('App\Http\Controllers\HomeController@search') }}">
+                                    <form action="{{ action('App\Http\Controllers\ActionsController@newplaylist') }}">
                                         <div class="input-group">
-                                            <input class="form-control" type="text" placeholder="New name" />
+                                            <input class="form-control" type="text" name='playlist' placeholder="New name" />
                                             <button class="btn btn-primary" type="button" href="#"><i class="fa fa-plus-circle"></i></button>
                                         </div>
                                     </form>
