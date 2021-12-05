@@ -24,7 +24,7 @@
                     <div class="card card-format">
                         <div class="container slide slide1">
                             <!-- Product image-->
-                        <a href="{{ route('display', ['episode_id' => $anime->episode])}}">
+                        <a href="{{action('App\Http\Controllers\HomeController@display', $post['id'] = $anime->episode) }}">
                             <img class="card-img-top" src="{{ $anime->image }}" alt="..." />
                             </a>
                             <div class="card-body">
