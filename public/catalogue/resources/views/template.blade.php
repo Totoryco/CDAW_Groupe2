@@ -41,7 +41,7 @@
                         <div class="search" style="margin: auto;">
                             <form action="{{ action('App\Http\Controllers\HomeController@search') }}">
                                 <div class="input-group">
-                                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                                    <input class="form-control" type="text" placeholder="Search for..." name="search" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
                                     <button class="btn btn-primary" id="btnNavbarSearch" type="button" href="{{ route('search') }}"><i class="fa fa-search"></i></button>
                                 </div>
                             </form>

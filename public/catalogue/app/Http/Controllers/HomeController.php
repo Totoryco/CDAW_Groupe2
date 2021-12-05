@@ -41,12 +41,31 @@ class HomeController extends Controller
         return view('cardTemplate', compact('data','title'));
     }
 
-    public function search()
+    public function search2(Request $request)
     {
+        //Entry
+        $search = $request->input('search');
+        $studiosselected = $request->input('studio');
+        $studioselected = $studiosselected[0];
         $title = 'Search';
         $order = 'date';
-        $data = DB::select('select animes.name, SUM(viewings.like) as likes, COUNT(distinct seasons.id) as number, max(episodes.released_date) as date, max(animes.image) as image, max(animes.description) as description, min(episodes.id) as episode from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join viewings on viewings.episode_id=episodes.id where viewings.user_id=' . Auth::user()->id . ' group by animes.name order by ' . $order . ' desc');
-        return view('search', compact('data','title'));
+
+        //Response
+        $studios = DB::select("select animationstudios.name from animationstudios");
+        $genres = DB::select("select genres.name from genres");
+        $data = DB::select("select animes.name, COUNT(distinct seasons.id) as number, max(episodes.released_date) as date, max(animes.image) as image, max(animes.description) as description, min(episodes.id) as episode from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join animationstudios on animes.animationstudio_id=animationstudios.id where animationstudios.name like '%" . $studioselected ."%' and animes.name like '%" . $search . "%' group by animes.name order by " . $order . " desc");
+        return view('search', compact('data','title','studios','genres'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $studios = DB::select("select animationstudios.name from animationstudios");
+        $genres = DB::select("select genres.name from genres");
+        $title = 'Search';
+        $order = 'date';
+        $data = DB::select("select animes.name, COUNT(distinct seasons.id) as number, max(episodes.released_date) as date, max(animes.image) as image, max(animes.description) as description, min(episodes.id) as episode from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id where animes.name like '%" . $search . "%' group by animes.name order by " . $order . " desc");
+        return view('search', compact('data','title','studios','genres'));
     }
 
     public function display($id)
