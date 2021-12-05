@@ -14,8 +14,9 @@ class AddingFactory extends Factory
      */
     public function definition()
     {
+        $array = array("1", "7", "18", "121", "2001", "3588", "13601", "28999", "33352", "38408");
         return [
-            'anime_id' => rand(1, 8),
+            'anime_id' => $array[rand(1, 8)],
         ];
     }
 

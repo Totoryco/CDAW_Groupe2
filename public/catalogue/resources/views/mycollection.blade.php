@@ -9,7 +9,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <form action="{{ action('App\Http\Controllers\HomeController@search2') }}">
+                        <form action="{{ action('App\Http\Controllers\HomeController@mycollection') }}">
                             <li class="nav-item dropdown mr-auto">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Choose an animation studios</a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -74,7 +74,7 @@
                                 
                                     <div class="input-group">
                                         <input class="form-control" type="text" placeholder="Search for..." name="search" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                                        <button class="btn btn-primary" id="btnNavbarSearch" type="button" href="{{ route('search2') }}"><i class="fa fa-search"></i></button>
+                                        <button class="btn btn-primary" id="btnNavbarSearch" type="button" href="{{ route('mycollection') }}"><i class="fa fa-search"></i></button>
                                     </div>
                                 
                             </div>

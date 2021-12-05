@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Models\Playlist;
+use App\Models\Saving;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -73,7 +75,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
             'pseudo' => $data['pseudo'],
@@ -81,5 +83,26 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        $user_id = $user->id;
+        $liked = Playlist::create([
+            'user_id' => $user_id,
+            'name' => "Liked",
+        ]);
+        $disliked =Playlist::create([
+            'user_id' => $user_id,
+            'name' => "Disliked",
+        ]);
+        $liked_id = $liked->id;
+        $disliked_id = $disliked->id;
+        Saving::create([
+            'user_id' => $user_id,
+            'playlist_id' => $liked_id,
+        ]);
+        Saving::create([
+            'user_id' => $user_id,
+            'playlist_id' => $disliked_id,
+        ]);
+
+        return $user;
     }
 }

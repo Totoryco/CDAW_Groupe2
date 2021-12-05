@@ -16,7 +16,7 @@ class SavingFactory extends Factory
     {
         return [
             'playlist_id' => rand(1, 9),
-            'user_id' => rand(1, 9),
+            'user_id' => rand(1, 5),
         ];
     }
 

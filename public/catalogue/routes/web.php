@@ -30,7 +30,7 @@ Route::get('/', 'App\Http\Controllers\HomeController@home')->name('home');
 Route::get('/mycollection', 'App\Http\Controllers\HomeController@mycollection')->middleware('auth')->name('mycollection');
 Route::get('/search', 'App\Http\Controllers\HomeController@search')->middleware('auth')->name('search');
 Route::get('/search2', 'App\Http\Controllers\HomeController@search2')->middleware('auth')->name('search2');
-Route::get('/display/{id}', 'App\Http\Controllers\HomeController@display')->name('display');
+Route::get('/display/{id}', 'App\Http\Controllers\HomeController@display')->middleware('auth')->name('display');
 
 Route::get('/profile', 'App\Http\Controllers\AuthController@showProfile')->middleware('auth')->name('profile');
 Route::get('/profile2', 'App\Http\Controllers\AuthController@showProfile2')->middleware('auth')->name('profile2');
