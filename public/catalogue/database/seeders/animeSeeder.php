@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Anime;
+use App\Models\Adding;
+use App\Models\Playlist;
 use App\Models\Season;
 use App\Models\Genre;
 use App\Models\Animationstudio;
