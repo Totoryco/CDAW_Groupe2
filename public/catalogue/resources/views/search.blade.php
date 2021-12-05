@@ -47,9 +47,9 @@
                                         <div id="list1" class="dropdown-check-list" tabindex="100">
                                             <span class="anchor">Sort by</span>
                                             <ul class="items">
-                                            <li><input type="checkbox" name="sortby[]" value="Yes"/> &nbsp Latest </li>
-                                            <li><input type="checkbox" name="sortby[]" value="Yes"/> &nbsp Newest</li>
-                                            <li><input type="checkbox" name="sortby[]" value="Yes"/> &nbsp Popularity </li>
+                                            <li><input type="checkbox" name="sortby[]" value="date"/> &nbsp Latest </li>
+                                            <li><input type="checkbox" name="sortby[]" value="date desc"/> &nbsp Newest</li>
+                                            <li><input type="checkbox" name="sortby[]" value="likes desc"/> &nbsp Popularity </li>
                                             </ul>
                                         </div>
                                     </ul>

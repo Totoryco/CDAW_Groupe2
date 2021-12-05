@@ -36,14 +36,31 @@ class HomeController extends Controller
         //Entry
         $search = $request->input('search');
         $studiosselected = $request->input('studio');
-        $studioselected = $studiosselected[0];
-        $title = 'Search';
-        $order = 'date';
-
+        if (is_null($studiosselected)) {
+            $studioselected ="";
+        }
+        else{
+            $studioselected = $studiosselected[0];
+        }
+        $genresselected = $request->input('genre');
+        if (is_null($genresselected)) {
+            $genreselected ="";
+        }
+        else{
+            $genreselected = $genresselected[0];
+        }
+        $orderselected = $request->input('sortby');
+        if (is_null($orderselected)) {
+            $order ="animes.name";
+        }
+        else{
+            $order = $orderselected[0];
+        }
         //Response
+        $title = 'Search';
         $studios = DB::select("select animationstudios.name from animationstudios");
         $genres = DB::select("select genres.name from genres");
-        $data = DB::select("select animes.name, COUNT(distinct seasons.id) as number, max(episodes.released_date) as date, max(animes.image) as image, max(animes.description) as description, min(episodes.id) as episode from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join animationstudios on animes.animationstudio_id=animationstudios.id where animationstudios.name like '%" . $studioselected ."%' and animes.name like '%" . $search . "%' group by animes.name order by " . $order . " desc");
+        $data = DB::select("select animes.name, SUM(viewings.like) as likes, COUNT(distinct seasons.id) as number, max(episodes.released_date) as date, max(animes.image) as image, max(animes.description) as description, min(episodes.id) as episode from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join animationstudios on animes.animationstudio_id=animationstudios.id join viewings on viewings.episode_id=episodes.id join classifications on classifications.anime_id=animes.id join genres on classifications.genre_id=genres.id where animationstudios.name like '%" . $studioselected ."%' and genres.name like '%" . $genreselected ."%' and animes.name like '%" . $search . "%' group by animes.name order by " . $order);
         return view('search', compact('data','title','studios','genres'));
     }
 
