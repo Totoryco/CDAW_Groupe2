@@ -42,7 +42,7 @@
                     </article>
                 </div>
                 <!-- Side widgets-->
-                <div class="col-lg-4">
+                <div class="col-lg-4" style="max-height: 85rem; overflow: auto; margin-bottom: 2rem;">
                     <!-- Comments section-->
                     <section class="mb-5">
                         <div class="bg-dark card">
@@ -57,7 +57,7 @@
                                     @foreach ($comments as $comment)
                                     <!-- Single comment-->
                                     <div class="d-flex">
-                                        <!-- <img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />-->
+                                        <img class="rounded-circle" src="{{$comment->avatar}}" alt="..." />
                                         <div class="ms-3 text-white">
                                             <div class="fw-bold text-primary">
                                                 {{$comment->pseudo}}
@@ -97,8 +97,6 @@
             </div>
         </div>
 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <!-- Tab script-->

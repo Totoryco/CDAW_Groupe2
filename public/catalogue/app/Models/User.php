@@ -47,12 +47,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // 0 = Guest
-    // 1 = User
-    // 2 = Modo
-    // 3 = Admin
-    // 4 = Banned
-
     public function isGuest ()
     {
         return $this->statusCheck();
