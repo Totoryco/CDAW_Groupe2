@@ -57,7 +57,7 @@
                                     @foreach ($comments as $comment)
                                     <!-- Single comment-->
                                     <div class="d-flex">
-                                        <img class="rounded-circle" src="{{$comment->avatar}}" alt="..." />
+                                        <img class="rounded-circle" src="{{asset('../public/images/').'/'.$comment->avatar}}" alt="..." />
                                         <div class="ms-3 text-white">
                                             <div class="fw-bold text-primary">
                                                 {{$comment->pseudo}}
