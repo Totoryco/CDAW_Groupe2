@@ -49,11 +49,10 @@ class HomeController extends Controller
         return view('search', compact('data','title'));
     }
 
-    public function diplay()
+    public function display()
     {
-        $title = 'Display';
-        $order = 'date';
-        $data = DB::select('select animes.name, SUM(viewings.like) as likes, COUNT(distinct seasons.id) as number, max(episodes.released_date) as date, max(animes.image) as image, max(animes.description) as description, min(episodes.id) as episode from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join viewings on viewings.episode_id=episodes.id where viewings.user_id=' . Auth::user()->id . ' group by animes.name order by ' . $order . ' desc');
-        return view('cardTemplate', compact('data','title'));
+        $episode = DB::select('select animes.name from animes');
+        $data = DB::select('select animes.name, SUM(viewings.like = 1) as likes , SUM(viewings.like = -1) as dislikes, COUNT(distinct seasons.id) as number, max(episodes.released_date) as date, max(animes.image) as image, max(animes.description) as description, min(episodes.id) as episode from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join viewings on viewings.episode_id=episodes.id where viewings.user_id=' . Auth::user()->id . ' group by episodes.name');
+        return view('display', compact('data','episode'));
     }
 }

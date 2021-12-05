@@ -88,7 +88,7 @@
         <!-- Content-->
         @yield('cards')
         @yield('profile')
-
+        @yield('display')
 
         <!-- Footer-->
         <footer class="py-5 bg-dark" style="justify-content: flex-end;">
