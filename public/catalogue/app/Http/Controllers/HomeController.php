@@ -72,7 +72,7 @@ class HomeController extends Controller
         $genres = DB::select("select genres.name from genres");
         $myplaylists = DB::select("select playlists.name from playlists join savings on playlists.id=savings.playlist_id where playlists.user_id=" . Auth::user()->id ." or savings.user_id=". Auth::user()->id);
         $data = DB::select("select animes.name, SUM(viewings.like) as likes, COUNT(distinct seasons.id) as number, max(episodes.released_date) as date, max(animes.image) as image, max(animes.description) as description, min(episodes.id) as episode from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join animationstudios on animes.animationstudio_id=animationstudios.id join viewings on viewings.episode_id=episodes.id join classifications on classifications.anime_id=animes.id join genres on classifications.genre_id=genres.id join addings on addings.anime_id=animes.id join playlists on addings.playlist_id=playlists.id join savings on savings.playlist_id=playlists.id where playlists.name like '%" . $playlistselected ."%' and animationstudios.name like '%" . $studioselected ."%' and genres.name like '%" . $genreselected ."%' and animes.name like '%" . $search . "%' group by animes.name order by " . $order);
-        return view('search', compact('data','title','studios','genres'));
+        return view('mycollection', compact('data','title','studios','genres','myplaylists'));
     }
 
     public function search2(Request $request)

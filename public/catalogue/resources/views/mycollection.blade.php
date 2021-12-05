@@ -47,7 +47,7 @@
                                         <div id="list1" class="dropdown-check-list" tabindex="100">
                                             <span class="anchor">Select playlist</span>
                                             <ul class="items">
-                                                @foreach($playlists as $playlist)
+                                                @foreach($myplaylists as $playlist)
                                                     <li><input type="checkbox" name="genre[]" value="{{$playlist->name}}" /> &nbsp {{$playlist->name}} </li>
                                                 @endforeach
                                             </ul>
