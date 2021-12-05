@@ -185,5 +185,16 @@ class animeSeeder extends Seeder
                 }
             } 
         }
+        //Pour chaque utilisateur, on fait 3 playlists, et dans chaque playlists, on ajoute 5 anime :
+        for ($k = 1; $k <= 8; $k++) {
+            \App\Models\Playlist::factory(3)->create([
+                'user_id' => $k,
+            ]);
+        }
+        for ($i = 1; $i <= 24; $i++) {
+            \App\Models\Adding::factory(5)->create([
+            'playlist_id' => $i,
+        ]);
+        }
     }
 }
