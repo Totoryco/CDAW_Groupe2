@@ -27,6 +27,10 @@ Route::get('/uploadAvatar','App\Http\Controllers\UploadAvatarController@avatarFo
 Route::post('/uploadAvatar','App\Http\Controllers\UploadAvatarController@avatarUpload')->middleware('auth')->name('uploadAvatar');
 
 Route::get('/', 'App\Http\Controllers\HomeController@home')->name('home');
+Route::get('/mycollection', 'App\Http\Controllers\HomeController@mycollection')->middleware('auth')->name('mycollection');
+Route::get('/search', 'App\Http\Controllers\HomeController@search')->name('search');
+Route::get('/display/{episode_id}', 'App\Http\Controllers\HomeController@display')->name('display');
+
 Route::get('/profile', 'App\Http\Controllers\AuthController@showProfile')->middleware('auth')->name('profile');
 Route::get('/profile2', 'App\Http\Controllers\AuthController@showProfile2')->middleware('auth')->name('profile2');
 Route::get('/profile3', 'App\Http\Controllers\AuthController@showProfile3')->middleware('auth')->name('profile3');

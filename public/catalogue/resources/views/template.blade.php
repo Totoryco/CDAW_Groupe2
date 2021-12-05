@@ -31,18 +31,18 @@
         <!-- Navigation bar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" style="font-size: 30px;" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}<i class="fa fa-home nav-icons" style="font-size: 30px;"></i></a>
+                <a class="navbar-brand" style="font-size: 30px;" href="{{ route('home') }}">{{ config('app.name', 'Laravel') }}<i class="fa fa-home nav-icons" style="font-size: 30px;"></i></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" style="font-size: 24px;" aria-current="page" href="lobby.html"></a></li>
+                        <li class="nav-item"><a class="nav-link active" style="font-size: 24px;" aria-current="page" href="{{ route('home') }}"></a></li>
                     </ul>
                     <ul class="navbar-nav mr-auto mb-2 mb-lg-0 ms-lg-4">
                         <div class="search" style="margin: auto;">
-                            <form action="search.html">
+                            <form action="{{ action('App\Http\Controllers\HomeController@search') }}">
                                 <div class="input-group">
                                     <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                                    <button class="btn btn-primary" id="btnNavbarSearch" type="button" href="search.html"><i class="fa fa-search"></i></button>
+                                    <button class="btn btn-primary" id="btnNavbarSearch" type="button" href="{{ route('search') }}"><i class="fa fa-search"></i></button>
                                 </div>
                             </form>
                         </div>
@@ -56,7 +56,7 @@
                                 <li class="nav-item"><a class="nav-link" style="font-size: 20px;" href="{{ route('register') }}">Register</a></li>
                             @endif
                         @else
-                            <li class="nav-item"><a class="nav-link" style="font-size: 20px;margin-left: 1rem;" href="{{ route('home') }}">My collection</a></li>
+                            <li class="nav-item"><a class="nav-link" style="font-size: 20px;margin-left: 1rem;" href="{{ route('mycollection') }}">My collection</a></li>
                                 <li class="nav-item dropdown mr-auto">
                                     <a class="nav-link dropdown-toggle" style="font-size: 20px;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-user nav-icons"></i> {{ Auth::user()->pseudo }}</a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -93,7 +93,7 @@
         <!-- Footer-->
         <footer class="py-5 bg-dark" style="justify-content: flex-end;">
 
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Groupe 2 - Jalon 2 2021</p></div>
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Groupe 2 - Jalon 4 2021</p></div>
         </footer>
     </body>
 </html>

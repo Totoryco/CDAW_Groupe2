@@ -2,6 +2,19 @@
 
 @section('cards')
     @parent
+    <!--Séparation de la page -->
+    <header class="bg-primary py-1">
+            <div class="container px-4 px-lg-5">
+                <div class="text-left">
+                    <h1 class="display-5 fw-bolder">{{ $title }}</h1> 
+                </div>
+            </div>
+        </header>
+
+    @if($title="Search")
+        @yield('search')
+    @endif
+
     <div class="grille">
         <div class="grille-display">
             @foreach ($data as $anime)
@@ -11,7 +24,7 @@
                     <div class="card card-format">
                         <div class="container slide slide1">
                             <!-- Product image-->
-                        <a href="display.html">
+                        <a href="{{ route('display', ['episode_id' => $anime->episode])}}">
                             <img class="card-img-top" src="{{ $anime->image }}" alt="..." />
                             </a>
                             <div class="card-body">
@@ -21,7 +34,10 @@
                                     <!-- Product description-->
                                     <h6>{{$anime->date}}</h6>
                                     <h6>{{$anime->number}} seasons</h6> 
-                                    <h6>{{$anime->likes}} Likes</h6>
+                                    <h6>@if(isset($anime->likes))
+                                            {{$anime->likes}}
+                                        @endif 
+                                    </h6>
                                 </div>
                             </div>
                         </div>
