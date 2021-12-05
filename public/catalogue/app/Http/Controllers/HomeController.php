@@ -49,10 +49,12 @@ class HomeController extends Controller
         return view('search', compact('data','title'));
     }
 
-    public function display()
+    public function display($id)
     {
-        $episode = DB::select('select animes.name from animes');
-        $data = DB::select('select animes.name, SUM(viewings.like = 1) as likes , SUM(viewings.like = -1) as dislikes, COUNT(distinct seasons.id) as number, max(episodes.released_date) as date, max(animes.image) as image, max(animes.description) as description, min(episodes.id) as episode from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id join viewings on viewings.episode_id=episodes.id where viewings.user_id=' . Auth::user()->id . ' group by episodes.name');
-        return view('display', compact('data','episode'));
+        $episode = DB::select('select animes.name as anime, seasons.id as seasonid, episodes.name as title, seasons.number as seasonnumber, episodes.number as episodenumber, animes.description as description from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id where episodes.id=' . $id);
+        $comments = DB::select('select users.pseudo as pseudo, comments.description as description, users.avatar as avatar from comments join users on comments.user_id=users.id where comments.episode_id=' . $id . ' order by comments.publication_date');
+        $season = $episode[0]->seasonid;
+        $data = DB::select('select episodes.id as id, episodes.number as number from episodes join seasons on episodes.season_id=seasons.id where seasons.id='. $season);
+        return view('display', compact('episode','comments','data'));
     }
 }
