@@ -17,6 +17,8 @@ use App\Models\Writing;
 use App\Models\Episode;
 use App\Models\Character;
 use App\Models\Voiceactor;
+use App\Models\Saving;
+use App\Models\User;
 use File;
 use Illuminate\Support\Facades\DB;
 
@@ -28,7 +30,8 @@ class animeSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   
+        
         \App\Models\User::factory(10)->create();
 
         $array = array("1", "7", "18", "121", "2001", "3588", "13601", "28999", "33352", "38408"); //List des animes
@@ -114,8 +117,6 @@ class animeSeeder extends Seeder
                     ]);
             }
 
-            
-
             //Les épisodes
             $json2 = File::get(public_path().'/data/episodes'. $i . '.json'); //remplacer 1 par $i quand j'aurais toutes les requêtes
             $episodes = json_decode($json2);
@@ -187,16 +188,20 @@ class animeSeeder extends Seeder
                 }
             } 
         }
+        
         //Pour chaque utilisateur, on fait 3 playlists, et dans chaque playlists, on ajoute 5 anime :
-        for ($k = 1; $k <= 8; $k++) {
+        for ($k = 1; $k <= 5; $k++) {
             \App\Models\Playlist::factory(3)->create([
                 'user_id' => $k,
             ]);
         }
-        for ($i = 1; $i <= 24; $i++) {
+        
+        for ($i = 1; $i <= 5; $i++) {
             \App\Models\Adding::factory(5)->create([
             'playlist_id' => $i,
         ]);
         }
+
+        \App\Models\Saving::factory(10)->create();
     }
 }
