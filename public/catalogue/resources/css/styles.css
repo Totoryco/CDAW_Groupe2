@@ -7833,12 +7833,12 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: var(--bs-primaryW) !important;
 }
 
 .bg-secondary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: var(--bs-secondaryW) !important;
 }
 
 .bg-success {
@@ -11802,6 +11802,7 @@ body {
 
 .slide3 {
     position: absolute;
+    overflow: hidden;
     z-index: 2;
     margin-top: 1rem;
     margin-left: 14.5rem;

@@ -3,7 +3,7 @@
 @section('cards')
     @parent
     <!--Séparation de la page -->
-    <header class="bg-primary py-1">
+    <header class="bg-secondary py-1">
             <div class="container px-4 px-lg-5">
                 <div class="text-left">
                     <h1 class="display-5 fw-bolder">{{ $title }}</h1> 
@@ -53,11 +53,26 @@
                         <span class="slide4" style="padding: -5px 0;">
                             <p class="text text-black mx-3 my-1 fw-bold">Not for me</p>
                         </span></a>
-                        <a class="btn mt-auto" >
-                        <i class="fa fa-list-ul icon-card-format"></i>
-                        <span class="slide4" style="padding: -5px 0;">
-                            <p class="text text-black mx-3 my-1 fw-bold">Add to playlist</p>
-                        </span></a>
+                        <div class="dropdown mr-auto">
+                            <a class="btn mt-auto" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-list-ul icon-card-format"></i>
+                            <span class="slide4" style="padding: -5px 0;">
+                                <p class="text text-black mx-3 my-1 fw-bold">Add to playlist</p>
+                            </span></a>
+                            <ul class="dropdown-menu" style="width: 15rem;">
+                                <li><a class="dropdown-item" href="#">Playlist example</a></li>
+
+                                <li><hr class="dropdown-divider" /></li>
+
+                                <li><div class="search dropdown-item" style="margin: auto;">
+                                    <form action="{{ action('App\Http\Controllers\HomeController@search') }}">
+                                        <div class="input-group">
+                                            <input class="form-control" type="text" placeholder="New name" />
+                                            <button class="btn btn-primary" type="button" href="#"><i class="fa fa-plus-circle"></i></button>
+                                        </div>
+                                    </form>
+                                </div></li>
+                            </ul>
+                        </div>
                     </div>
                     </div>
                     <!-- Side Text on hover-->

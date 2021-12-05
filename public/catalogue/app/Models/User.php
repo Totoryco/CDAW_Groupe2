@@ -46,4 +46,40 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // 0 = Guest
+    // 1 = User
+    // 2 = Modo
+    // 3 = Admin
+    // 4 = Banned
+
+    public function isGuest ()
+    {
+        return $this->statusCheck();
+    }
+
+    public function isUser ()
+    {
+        return $this->statusCheck("user");
+    }
+
+    public function isModo ()
+    {
+        return $this->statusCheck("modo");
+    }
+
+    public function isAdmin ()
+    {
+        return $this->statusCheck("admin");
+    }
+
+    public function isBanned ()
+    {
+        return $this->statusCheck("banned");
+    }
+
+    protected function statusCheck ($status = "guest")
+    {
+        return $this->status === $status ? true : false;
+    }
 }
