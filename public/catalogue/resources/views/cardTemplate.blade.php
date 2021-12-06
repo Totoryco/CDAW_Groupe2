@@ -47,17 +47,17 @@
                             <a class="btn mt-auto" >
                             <i class="fa fa-thumbs-up icon-card-format"></i>
                             
-                            <span class="slide4" style="bottom: 100%; left: 50%; margin-left: -60px;">
+                            <span class="slide4" style="bottom: 90%; margin-left: -60px;">
                                 <p class="text text-black mx-3 my-1 fw-bold">I like this</p>
                             </span></a>
                             <a class="btn mt-auto">
                             <i class="fa fa-thumbs-down icon-card-format"></i>
-                            <span class="slide4" style="padding: -5px 0;">
+                            <span class="slide4" style="bottom: 90%; margin-left: -65px;">
                                 <p class="text text-black mx-3 my-1 fw-bold">Not for me</p>
                             </span></a>
                             <div class="dropdown mr-auto">
                                 <a class="btn mt-auto" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-list-ul icon-card-format"></i>
-                                <span class="slide4" style="padding: -5px 0;">
+                                <span class="slide4" style="width: 9.5rem; bottom: 107%; margin-left: -83px;">
                                     <p class="text text-black mx-3 my-1 fw-bold">Add to playlist</p>
                                 </span></a>
                                 <ul class="dropdown-menu" style="width: 15rem;">
