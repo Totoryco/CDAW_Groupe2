@@ -9,31 +9,78 @@
                     <!-- Post content-->
                     <article>
                         <div class="container">
-                            <div class="row">
-                                <!-- Post header-->
-                                <div class="col">
-                                    <header class="mb-4">
-                                        <!-- Post title-->
-                                        <h1 class="fw-bolder mb-1">{{ $episode[0]->anime }} : {{ $episode[0]->title }}</h1>
-                                        <!-- Post meta content-->
-                                        <div class="text-muted fst-italic mb-2">Season {{ $episode[0]->seasonnumber }} - episode {{ $episode[0]->episodenumber }}</div>
-                                    </header>
-                                </div>
-                                <div class="col">
-                                    <i class="fa fa-thumbs-up" style="font-size:48px;color:green;"></i>
-                                    <i class="fa fa-thumbs-down" style="font-size:48px;color:red;"></i>
-                                    add to playlist 
-                                    <i class="fa fa-plus" style="font-size:32px;"></i>
-                                    settings 
-                                    <i class="fa fa-cog" style="font-size:32px;color:gray;"></i>
-                                    <div class="text-black"> 304 &emsp;&ensp; 16 </div>
-                                </div>
-                            </div>
+                            <!-- Post header-->
+                            <header class="mb-4">
+                                <!-- Post title-->
+                                <h1 class="fw-bolder mb-1">{{ $episode[0]->anime }} : {{ $episode[0]->title }}</h1>
+                                <!-- Post meta content-->
+                                <div class="text-muted fst-italic mb-2">Season {{ $episode[0]->seasonnumber }} - episode {{ $episode[0]->episodenumber }}</div>
+                            </header>
                         </div>
                         <!-- Preview image figure-->
                         <div class="mb-4" style="width: 100%; height: 0px; position: relative; padding-bottom: 56.250%;">
                             <iframe src="https://streamable.com/e/shil2" frameborder="0" width="100%" height="100%" allowfullscreen style="width: 100%; height: 100%; position: absolute;">
                             </iframe>
+                            </div>
+
+                            <div class="container" >
+                                <div class="row">
+
+                                    <div class="col">
+                                        <div class="row"> 
+                                            <a class="fa fa-thumbs-up fa-2x text-center" style="color:green;"> </a>
+                                        </div>
+                                        <div class="row">
+                                            <h7 class="text-center">nombre de likes</h7>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="row"> 
+                                            <a class="fa fa-thumbs-down fa-2x text-center" style="color:red;"> </a>
+                                        </div>
+                                        <div class="row">
+                                        <h7 class="text-center">nombre de dislikes</h7>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="row" style="margin: auto"> 
+                                            <div class="dropdown">
+                                            <a class="btn" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span class="fa fa-list-ul fa-2x"></span></a>
+                                            <ul class="dropdown-menu" style="width: 15rem;">
+                                                @foreach($myplaylists as $playlist)
+                                                @php
+                                                    $array = [$playlist->name, $anime->id];
+                                                @endphp
+                                                <li><a class="dropdown-item" href="{{action('App\Http\Controllers\ActionsController@adding',['playlistname'=> $playlist->name,'animeid'=>$anime->id] )}}">&nbsp {{$playlist->name}}</a></li>
+                                                @endforeach
+                                                <li><hr class="dropdown-divider" /></li>
+                                                <li><div class="search dropdown-item" style="margin: auto;">
+                                                    <form action="{{ action('App\Http\Controllers\ActionsController@newplaylist') }}">
+                                                        <div class="input-group">
+                                                            <input class="form-control" type="text" name='playlist' placeholder="New name" />
+                                                            <button class="btn btn-primary" type="button" href="#"><i class="fa fa-plus-circle"></i></button>
+                                                        </div>
+                                                    </form>
+                                                </div></li>
+                                            </ul>
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                        <h7 class="text-center">Add to Playlist</h7>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="row"> 
+                                            <a class="fa fa-cog fa-2x text-center" style="color:grey;"> </a>
+                                        </div>
+                                        <div class="row">
+                                        <h7 class="text-center">Settings</h7>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         <!-- Post categories-->
