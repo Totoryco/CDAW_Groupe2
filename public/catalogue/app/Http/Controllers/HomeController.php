@@ -128,7 +128,7 @@ class HomeController extends Controller
         $episode = DB::select('select animes.name as anime, animes.name as id, seasons.id as seasonid, episodes.name as title, seasons.number as seasonnumber, episodes.number as episodenumber, animes.description as description from animes join seasons on animes.id=seasons.anime_id join episodes on seasons.id=episodes.season_id where episodes.id=' . $id);
         $comments = DB::select('select users.pseudo as pseudo, comments.description as description, users.avatar as avatar from comments join users on comments.user_id=users.id where comments.episode_id=' . $id . ' order by comments.publication_date');
         $likes =  DB::select('select COUNT(viewings.id) as likes from episodes join viewings on viewings.episode_id=episodes.id where viewings.like=1 and episodes.id=' . $id);
-        $dislikes =  DB::select('select COUNT(viewings.id) as likes from episodes join viewings on viewings.episode_id=episodes.id where viewings.like=-1 and episodes.id=' . $id); 
+        $dislikes =  DB::select('select COUNT(viewings.id) as dislikes from episodes join viewings on viewings.episode_id=episodes.id where viewings.like=-1 and episodes.id=' . $id); 
         $dislike = $dislikes[0];
         $like = $likes[0];
         $season = $episode[0]->seasonid;

@@ -31,7 +31,7 @@
                                             <a class="fa fa-thumbs-up fa-2x text-center" style="color:green;"> </a>
                                         </div>
                                         <div class="row">
-                                            <h7 class="text-center">nombre de likes</h7>
+                                            <h7 class="text-center">{{$like->likes}} likes</h7>
                                         </div>
                                     </div>
 
@@ -40,7 +40,7 @@
                                             <a class="fa fa-thumbs-down fa-2x text-center" style="color:red;"> </a>
                                         </div>
                                         <div class="row">
-                                        <h7 class="text-center">nombre de dislikes</h7>
+                                        <h7 class="text-center">{{$dislike->dislikes}} dislikes</h7>
                                         </div>
                                     </div>
 
