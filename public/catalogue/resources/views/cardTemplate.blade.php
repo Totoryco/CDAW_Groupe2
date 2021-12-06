@@ -44,13 +44,13 @@
                         <!-- Bottom Button-->
                         <div class="card-footer bg-dark slide slide2">
                             @if(!is_null(Auth::user()))
-                            <a class="btn mt-auto" >
+                            <a class="btn mt-auto" href="{{action('App\Http\Controllers\ActionsController@adding',['playlistname'=> 'Liked','animeid'=>$anime->id] )}}" >
                             <i class="fa fa-thumbs-up icon-card-format"></i>
                             
                             <span class="slide4" style="bottom: 90%; margin-left: -60px;">
                                 <p class="text text-black mx-3 my-1 fw-bold">I like this</p>
                             </span></a>
-                            <a class="btn mt-auto">
+                            <a class="btn mt-auto" href="{{action('App\Http\Controllers\ActionsController@adding',['playlistname'=> 'Disliked','animeid'=>$anime->id] )}}">
                             <i class="fa fa-thumbs-down icon-card-format"></i>
                             <span class="slide4" style="bottom: 90%; margin-left: -65px;">
                                 <p class="text text-black mx-3 my-1 fw-bold">Not for me</p>

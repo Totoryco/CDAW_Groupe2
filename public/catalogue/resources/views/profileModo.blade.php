@@ -81,50 +81,45 @@
                                 <table id="datatablesSimple" class="table table-striped" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Studio</th>
-                                            <th>Country</th>
-                                            <th>Last seen</th>
-                                            <th>Season</th>
-                                            <th>Episode</th>
-                                            <th>My opinion</th>
+                                            <th>ID Comments</th>
+                                            <th>Pseudo</th>
+                                            <th>User_id</th>
+                                            <th>Description</th>
+                                            <th>Publication Date</th>
+                                            <th>Likes</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Studio</th>
-                                            <th>Country</th>
-                                            <th>Last seen</th>
-                                            <th>Season</th>
-                                            <th>Episode</th>
-                                            <th>My opinion</th>
+                                            <th>ID Comments</th>
+                                            <th>Pseudo</th>
+                                            <th>User_id</th>
+                                            <th>Description</th>
+                                            <th>Publication Date</th>
+                                            <th>Likes</th>
+                                            <th>Status</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @foreach ($data as $anime)
+                                        @foreach ($data as $comment)
                                         <tr>
-                                            <td>{{$anime->name}}</td>
-                                            <td>{{$anime->animestudio}}</td>
-                                            <td>{{$anime->country}}</td>
-                                            <td>
-                                            @if(isset($anime->date))
-                                                {{$anime->date}}
+                                            <td>{{$comment->id}}</td>
+                                            <td>{{$comment->pseudo}}</td>
+                                            <td>{{$comment->id2}}</td>
+                                            <td>{{$comment->description}}</td>
+                                            <td>@if(isset($comment->date))
+                                                {{$comment->date}}
                                             @else
-                                                Never seen
+                                                No date
                                             @endif
                                             </td>
-                                            <td>{{$anime->seasonnumber}}</td>
-                                            <td>{{$anime->episodenumber}}</td>
+                                            <td>{{$comment->likes}}</td>
                                             <td>
-                                            @if(($anime->likes)==1)
-                                                Liked
+                                            @if(($comment->verified)==1)
+                                                Verified
                                             @else
-                                                @if(($anime->likes)==-1)
-                                                    Disliked
-                                                @else
-                                                    None
-                                                @endif
+                                                To verify
                                             @endif
                                             </td>
                                         </tr>
