@@ -6,7 +6,6 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Anime;
 use App\Models\Adding;
-use App\Models\Playlist;
 use App\Models\Season;
 use App\Models\Genre;
 use App\Models\Animationstudio;
@@ -190,13 +189,7 @@ class animeSeeder extends Seeder
         }
         
         //Pour chaque utilisateur, on fait 3 playlists, et dans chaque playlists, on ajoute 5 anime :
-        for ($k = 1; $k <= 5; $k++) {
-            \App\Models\Playlist::factory(3)->create([
-                'user_id' => $k,
-            ]);
-        }
-        
-        for ($i = 1; $i <= 5; $i++) {
+        for ($i = 1; $i <= 2; $i++) {
             \App\Models\Adding::factory(5)->create([
             'playlist_id' => $i,
         ]);
