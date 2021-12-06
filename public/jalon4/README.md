@@ -35,7 +35,7 @@ La suite constitue un parcours type permettant de faire le tour des fonctionnali
    - Clicker sur une carte d'un anime afin de se rendre sur une page de Display. On observe 2 sections sur les onglets du côté : "Next episodes" ou "Comment section".
    - Appuyer sur le bouton "My Collection" de la navigation bar. Il permet comme le search de lister les animes mais on peut maintenant les sélectionner par playlist.
    - Retourner dans le profile comme dans l'étape 3 du parcours. On observe en bas l'historique de l'utilisateur. Les 4 boutons permettent aussi de sélectionner certains groupes d'animes. L'idée est ici de pouvoir implémenter un système de statistiques dans le futur.
-   - Enfin pour les droits d'admin, dans un nouvel onglet, se rendre dans la base de données MySQL, se connecter avec "root" et "root", et aller dans la base users dans medias
+   - Enfin pour les droits d'admin, dans un nouvel onglet, se rendre dans la base de données MySQL http://localhost:5081, se connecter avec "root" et "root", et aller dans la base users dans medias
    - Retrouver votre compte et changer manuellement le status de "guest" à "admin". 
    - En raffraichissant la page profile de notre autre onglet, deux nouveaux choix sont apparus dans la barre de gauche.
    - "Comments" qui permet d'afficher tous les commentaires non modérés et "Users" pour afficher tous les utilisateurs. L'idée est de pouvoir implémenter les fonctionnalités d'édition permettant de modifier des commentaires si l'on est modérateur (les admins sont des modérateurs) ou de modifier le status des utilisateurs (ce qu'on a dû faire manuellement pour notre compte).
