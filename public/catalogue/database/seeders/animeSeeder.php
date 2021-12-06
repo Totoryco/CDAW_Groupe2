@@ -33,7 +33,7 @@ class animeSeeder extends Seeder
         
         \App\Models\User::factory(10)->create();
 
-        $array = array("1", "7", "18", "121", "2001", "3588", "13601", "28999", "33352", "38408"); //List des animes
+        $array = array("1", "7", "18", "104", "121", "2001", "3588", "13601", "28999", "33352", "38408"); //List des animes
         foreach($array as $i){
             $json = File::get(public_path().'/data/anime'. $i . '.json');
             $anime = json_decode($json);
