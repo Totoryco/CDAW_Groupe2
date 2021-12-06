@@ -11797,7 +11797,7 @@ body {
 
 .card .slide.slide2 {
     position: relative;
-    visibility: hidden;
+    opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11863,7 +11863,7 @@ body {
 
 .card:hover .slide.slide2{
     transform: translateY(0);
-    visibility: visible;
+    opacity: 1;
 }
 .card:hover + .slide3{
     display: block;
