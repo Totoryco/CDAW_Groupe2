@@ -51,9 +51,9 @@
                                             <ul class="dropdown-menu" style="width: 15rem;">
                                                 @foreach($myplaylists as $playlist)
                                                 @php
-                                                    $array = [$playlist->name, $anime->id];
+                                                    $array = [$playlist->name, $episode[0]->id];
                                                 @endphp
-                                                <li><a class="dropdown-item" href="{{action('App\Http\Controllers\ActionsController@adding',['playlistname'=> $playlist->name,'animeid'=>$anime->id] )}}">&nbsp {{$playlist->name}}</a></li>
+                                                <li><a class="dropdown-item" href="{{action('App\Http\Controllers\ActionsController@adding',['playlistname'=> $playlist->name,'animeid'=>$episode[0]->id] )}}">&nbsp {{$playlist->name}}</a></li>
                                                 @endforeach
                                                 <li><hr class="dropdown-divider" /></li>
                                                 <li><div class="search dropdown-item" style="margin: auto;">
