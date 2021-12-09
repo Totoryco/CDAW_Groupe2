@@ -44,5 +44,5 @@ La suite constitue un parcours type permettant de faire le tour des fonctionnali
 
 
 
-Vidéo de démonstration : sera poster ultérieurement dans un futur commit du nom de jalon4Video : https://youtubexxxx
+Vidéo de démonstration : sera poster ultérieurement dans un futur commit du nom de jalon4Video : https://www.youtube.com/watch?v=zm7CFNqUTzc
 
